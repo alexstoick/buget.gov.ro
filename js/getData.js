@@ -48,6 +48,7 @@ function fillLevel(level,id)
 	if(level==3)
 	{
 		chartData=[];
+		console.log(id);
 		getData([id],1,3,level,id);
 	}
 	if(level==4)
@@ -62,7 +63,7 @@ function fillLevelWithoutNames(level,array,itemNumber){
  		sum+=parseInt(array[i].suma);
  	chartData.push({
     	nume: levelNames[level][itemNumber],
-    	id: itemNumber,
+    	idForThis: itemNumber,
     	value: sum,
     	nextLevel : nextLevel[level][itemNumber] });
 }
@@ -70,7 +71,7 @@ var object;
 function fillLevelWithNames(level,array,itemNumber,type){
 	var sum=0;
 	object=array;
-	console.log(array);
+	console.log(itemNumber);
  	for(var i=0;i<array.length;i++)
  	{
  		var value=parseInt(array[i].suma);
@@ -81,7 +82,7 @@ function fillLevelWithNames(level,array,itemNumber,type){
  			nume=array[i].denumireIndicator;
  		chartData.push({
     		nume: nume,
-    		id: itemNumber,
+    		idForThis: array[i].id,
     		value: value,
     		nextLevel : nextLevel[level][itemNumber]
     });
@@ -107,6 +108,7 @@ function updateData(withAnimation)
 	$("[cursor='pointer']").hide();
 }
 function getData(array,copii,cerere,level,itemNumber){
+	console.log(array);
 	var data="institutie=";
 	loading=0;
 	for(var i=0;i<array.length;i++)
