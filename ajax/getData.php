@@ -6,7 +6,7 @@ require_once('../model/IntrareBuget.php');
 $res = array();
 $res['results'] = array();
 
-if(empty($_GET['minister']) || empty($_GET['copii'])){
+if(empty($_GET['minister'])){
 	$res['status'] = -1;
 	$res['error'] = 'Invalid parameters.';
 	echo json_encode($res);
@@ -40,8 +40,8 @@ foreach($data->entry as $entry){
 	if(
 		(substr($intrare->id, 0, strlen($_GET['minister'])+1) == $_GET['minister'].'-') &&
 		(
-			($_GET['copii'] == 'false' && $intrare->idParinte == 0) ||
-			($_GET['copii'] == 'true' && $intrare->idParinte != 0)
+			(empty($_GET['copii']) && $intrare->idParinte == 0) ||
+			(!empty($_GET['copii']) && $intrare->idParinte != 0)
 		)
 	){
 		$res['results'][] = $intrare;	
