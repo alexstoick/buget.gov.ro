@@ -49,12 +49,12 @@ AmCharts.ready(function() {
     // WRITE
     chart.write("chartdiv");
     chart.addListener("clickGraphItem",handleClick);
-    
+
     function handleClick(item)
     {
-        chartData[item.index];
+        console.log(chartData[item.index]);
         nameClickedPreviously[currentlyInLevel]=chartData[item.index].nume;
-        fillLevel(chartData[item.index].nextLevel,chartData[item.index].itemNumber);    
+        fillLevel(chartData[item.index].nextLevel,chartData[item.index].idForThis);    
     }
     fillLevel(0);
 });
