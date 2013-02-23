@@ -52,6 +52,7 @@ AmCharts.ready(function() {
     function handleClick(item)
     {
         chartData[item.index];
+        nameClickedPreviously[currentlyInLevel]=chartData[item.index].nume;
         fillLevel(chartData[item.index].nextLevel,chartData[item.index].itemNumber);    
     }
     fillLevel(0);
