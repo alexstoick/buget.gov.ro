@@ -10,9 +10,9 @@ $propNamesURL= strtolower(implode($propNames,','));
 $res = array();
 $res['results'] = array();
 
-if(empty($_GET['minister'])){
+if(empty($_GET['institutie'])){
 	$res['status'] = -1;
-	$res['error'] = 'Invalid parameters.';
+	$res['error'] = 'Invalid parameters. Valid request is: institutie=MAE[,MAI,...][&copii=1]';
 	echo json_encode($res);
 	die();
 }
@@ -40,11 +40,13 @@ foreach($data->entry as $entry){
 		$intrare->$pn = (string)$ns_d->{$xmlPn};
 	}
 
+	$suffixedInstitutions = explode(",",$_GET['institutie']);
+	foreach($suffixedInstitutions as &$elem){ $elem .= "-"; }
 	if(
-		(substr($intrare->id, 0, strlen($_GET['minister'])+1) == $_GET['minister'].'-') &&
+		(in_array(substr($intrare->id, 0, strpos($intrare->id,'-')+1), $suffixedInstitutions)) &&
 		(
-			(empty($_GET['copii']) && $intrare->idParinte == 0) ||
-			(!empty($_GET['copii']) && $intrare->idParinte != 0)
+			(empty($_GET['copii']) && $intrare->idParinte == '0') ||
+			(!empty($_GET['copii']) && $intrare->idParinte != '0')
 		)
 	){
 		$res['results'][] = $intrare;	
