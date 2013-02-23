@@ -55,7 +55,7 @@ if (empty($g_page)) {
       	</div>
     </div>
 
-    <div id="chartdiv" style="width: 100%; height: 450px;"></div> 
+    <div id="chartdiv" style="width: 100%; height: 600px;"></div> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/amcharts.js"></script>
 	 <script src="js/charts.js"></script>

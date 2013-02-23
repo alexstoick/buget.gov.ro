@@ -22,6 +22,9 @@ AmCharts.ready(function() {
     var valueAxis = new AmCharts.ValueAxis();
     valueAxis.axisAlpha = 0;
     valueAxis.gridAlpha = 0.1;
+    valueAxis.unit=" lei";
+    valueAxis.ignoreAxisWidth = true;
+    // valueAxis.logarithmic=true;
     valueAxis.position = "top";
     chart.addValueAxis(valueAxis);
 
@@ -31,7 +34,7 @@ AmCharts.ready(function() {
     graph1.type = "column";
     graph1.title = "Fonduri";
     graph1.valueField = "value";
-    graph1.balloonText = "Income:[[value]]";
+    graph1.balloonText = "Buget:[[value]] lei";
     graph1.lineAlpha = 0;
     graph1.fillColors = "#ADD981";
     graph1.fillAlphas = 1;
@@ -48,8 +51,11 @@ AmCharts.ready(function() {
     chart.addListener("clickGraphItem",handleClick)
     function handleClick(item)
     {
-        console.log(item);
-        fillLevel(chartData[item.index].nextLevel);
+        if(nextLevel==3)
+        {
+            fillLevel(chartData[item.index].nextLevel,0);    
+        }
+        
     }
     fillLevel(0);
 });
