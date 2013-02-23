@@ -4,21 +4,23 @@ for(var j=1;j<=18;j++)
 var altele=[18];
 var levelMembers=[[ministere,altele],[ministere]];
 var levelNames=[["Ministere","Alte insutitii"],[]];
-var nextLevel=[[1,2],[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]];
+var nextLevel=[[1,2],[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],[],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 var loading=0;
 var level=0;
 var left=0;
 function fillLevel(level,id)
 {
 	
-	left=levelMembers[level].length;
+	
 	if(level==0)
 	{
+		left=levelMembers[level].length;
 		for(var i=0;i<levelMembers[level].length;i++)
 			getData(levelMembers[level][i],0,1,level,i);
 	}
 	if(level==1)
 	{
+		left=levelMembers[level].length;
 		chartData=[];
 		for(var i=0;i<levelMembers[level].length;i++)
 			getData(levelMembers[level][i],0,2,level,i);
@@ -26,7 +28,7 @@ function fillLevel(level,id)
 	if(level==3)
 	{
 		chartData=[];
-		getData()
+		getData([id],1,3,level,id);
 	}
 }
 function fillLevelWithoutNames(level,array,itemNumber){
@@ -40,16 +42,20 @@ function fillLevelWithoutNames(level,array,itemNumber){
     	nextLevel : nextLevel[level][itemNumber] });
 }
 var object;
-function fillLevelWithNames(level,array,itemNumber){
+function fillLevelWithNames(level,array,itemNumber,type){
 	var sum=0;
 	object=array;
+	console.log(array);
  	for(var i=0;i<array.length;i++)
  	{
  		var value=parseInt(array[i].suma);
- 		// if(value>8000000)
- 		// 	value=8000000;
+ 		var nume;
+ 		if(type==1)
+ 			nume=array[i].numeInstitutie;
+ 		else
+ 			nume=array[i].denumireIndicator;
  		chartData.push({
-    		nume: array[i].numeInstitutie,
+    		nume: nume,
     		id: itemNumber,
     		value: value,
     		nextLevel : nextLevel[level][itemNumber]
@@ -71,7 +77,6 @@ function compare(a,b)
 function updateData(withAnimation)
 {
 	chartData.sort(compare);
-	console.log(chartData);
 	chart.dataProvider = chartData;
 	chart.validateData();
 }
@@ -85,7 +90,6 @@ function getData(array,copii,cerere,level,itemNumber){
 			data+=",";
 
 	}
-	console.log(data);
 	if(copii==1){
 		data += "&copii=1"
 	}
@@ -96,22 +100,27 @@ function getData(array,copii,cerere,level,itemNumber){
 		data: data,
 		success: function(data){
 			left--;
-			console.log(data);
 			if(cerere==1){
 				fillLevelWithoutNames(level,data["results"],itemNumber);
+				if(left==0)
+				{
+				updateData(true);
+				}
 			}
 			if(cerere==2)
 			{
-				fillLevelWithNames(level,data["results"],itemNumber);
+				fillLevelWithNames(level,data["results"],itemNumber,1);
+				if(left==0)
+				{
+					updateData(true);
+				}
 			}
 			if(cerere==3)
 			{
-
-			}
-			if(left==0)
-			{
+				fillLevelWithNames(level,data["results"],itemNumber,2);
 				updateData(true);
 			}
+			
 		}
 	});
 }

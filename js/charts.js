@@ -51,11 +51,8 @@ AmCharts.ready(function() {
     chart.addListener("clickGraphItem",handleClick)
     function handleClick(item)
     {
-        if(nextLevel==3)
-        {
-            fillLevel(chartData[item.index].nextLevel,0);    
-        }
-        
+        chartData[item.index];
+        fillLevel(chartData[item.index].nextLevel,chartData[item.index].itemNumber);    
     }
     fillLevel(0);
 });
