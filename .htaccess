@@ -1,0 +1,16 @@
+Allow from all
+Satisfy Any
+
+Options +FollowSymlinks
+Options -Indexes
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([a-zA-Z0-9_-]+)((&.+\=.+)*)$ index.php?page=$1$2 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)((&.+\=.+)*)$ index.php?page=$1&subpage=$2$3 [QSA]
+
+ErrorDocument 404 /not_found
+
