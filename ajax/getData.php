@@ -3,6 +3,10 @@
 require_once('../model/RestServiceClient.php');
 require_once('../model/IntrareBuget.php');
 
+$propNames = array('id','idParinte','an','numeInstitutie',
+	'denumireIndicator','tipIntrare','suma');
+$propNamesURL= strtolower(implode($propNames,','));
+
 $res = array();
 $res['results'] = array();
 
@@ -14,7 +18,7 @@ if(empty($_GET['minister'])){
 }
 
 $rws = new RestServiceClient('http://rogovdata.cloudapp.net:8080/v1/RoGovOpenData/buget');
-$rws->query = '';
+$rws->query = '$select='.$propNamesURL;
 $rws->results = '';
 $rws->appid = '';
 $rws->excuteRequest();
@@ -30,8 +34,7 @@ foreach($data->entry as $entry){
 
 	$intrare = new IntrareBuget();
 
-	$propNames = array('id','idParinte','an','numeInstitutie',
-		'denumireIndicator','tipIntrare','suma');
+
 	foreach($propNames as $pn){
 		$xmlPn = strtolower($pn);	
 		$intrare->$pn = (string)$ns_d->{$xmlPn};
