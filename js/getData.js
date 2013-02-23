@@ -1,28 +1,84 @@
-var date=[["MACPN","MAE"],"MADR"];
-function findSum(array){
+var ministere=[];
+for(var j=1;j<=18;j++)
+	ministere[j-1]=""+j;
+var altele=[18];
+var levelMembers=[[ministere,altele],[ministere]];
+var levelNames=[["Ministere","Alte insutitii"],[]];
+var nextLevel=[[1,2]];
+var loading=0;
+var level=0;
+var left=0;
+function fillLevel(level)
+{
+	
+	if(level==0)
+	{
+		
+		for(var i=0;i<levelMembers[0].length;i++)
+			getData(levelMembers[level][i],0,1,level,i);
+	}
+	if(level==1)
+	{
+		chartData=[];
+		for(var i=0;i<levelMembers[level].length;i++)
+			getData(levelMembers[level][i],0,2,level,i);
+	}
+}
+function fillLevelWithoutNames(level,array,itemNumber){
 	var sum=0;
  	for(var i=0;i<array.length;i++)
- 		getData(array[0],0,function(data){
- 			sum+=data
- 		});
- 	return sum;
+ 		sum+=parseInt(array[i].suma);
+ 	console.log
+ 	chartData.push({
+    	nume: levelNames[level][itemNumber],
+    	value: sum,
+    	nextLevel : nextLevel[level][itemNumber] });
 }
-function getData(array,copii,callback){
-	var data="institutie="
+var object;
+function fillLevelWithNames(level,array,itemNumber){
+	var sum=0;
+	console.log(array);
+	object=array;
+ 	for(var i=0;i<array.length;i++)
+ 		chartData.push({
+    		nume: array[i].numeInstitutie,
+    	value: parseInt(array[i].suma)});
+}
+function getData(array,copii,cerere,level,itemNumber){
+	var data="institutie=";
+	loading=0;
 	for(var i=0;i<array.length;i++)
 	{
-		data+=array[i]+",";
+		data+=array[i];
+		if(i!=array.length-1)
+			data+=",";
+
 	}
-	data[data.length]=0;
+	console.log(data);
 	if(copii==1){
 		data += "&copii=1"
 	}
+	
 	$.ajax({
 		dataType: "json",
 		url: "ajax/getData.php",
 		data: data,
 		success: function(data){
-			callback(data["results"][0]);
+			if(cerere==1){
+				fillLevelWithoutNames(level,data["results"],itemNumber);
+				chart.dataProvider = chartData;
+				chart.validateData();
+				//console.log("ALIVE");
+			}
+			if(cerere==2)
+			{
+
+				fillLevelWithNames(level,data["results"],itemNumber);
+				chart.dataProvider = chartData;
+				chart.validateData();
+				chart.animateAgain();
+			}
+			loading=1;
 		}
 	});
 }

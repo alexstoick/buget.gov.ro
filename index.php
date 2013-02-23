@@ -54,12 +54,8 @@ if (empty($g_page)) {
         </div>
       	</div>
     </div>
-  	<div class="row" style="align:center"> 
-    	<div class="span4"><button class="btn btn-primary" type="button">Default button</button></div>
- 		<div class="span8" style="align:center">Esti in general</div>
-    </div>
-    <div id="chartdiv" style="width: 100%; height: 600px;"></div> 
-    <div id="chartdiv2" style="width: 100%; height: 600px;" style"hidden:true"></div> 
+
+    <div id="chartdiv" style="width: 100%; height: 450px;"></div> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/amcharts.js"></script>
 	 <script src="js/charts.js"></script>
