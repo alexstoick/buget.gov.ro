@@ -41,11 +41,14 @@ foreach($data->entry as $entry){
 	}
 
 	if(
-		(in_array($intrare->id, explode(",",$_GET['institutie']))) &&
 		(
+			(in_array($intrare->id, explode(",",$_GET['institutie']))) &&
 			(empty($_GET['copii']) && $intrare->idParinte == '0') 
 		) ||
-		(!empty($_GET['copii']) && $intrare->idParinte != '0' && $intrare->idParinte == $intrare->id ) //hack needed here.
+		(
+			(in_array($intrare->idParinte, explode(",",$_GET['institutie']))) &&
+			(!empty($_GET['copii']) && $intrare->idParinte != '0' ) //hack needed here.
+		)
 	){
 		$res['results'][] = $intrare;	
 	}
