@@ -63,6 +63,7 @@ if (empty($g_page)) {
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/amcharts.js"></script>
 	 <script src="js/charts.js"></script>
+	  <script src="js/getData.js"></script>
 	  <script src="js/bootstrap.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 	</body>
