@@ -6,15 +6,14 @@ var levelMembers=[[ministere,altele],[ministere]];
 var levelNames=[["Ministere","Alte insutitii"],[]];
 var nextLevel=[[1,2]];
 var loading=0;
-console.log("loading");
 var level=0;
 var left=0;
 function fillLevel(level)
 {
 	
+	left=levelMembers.length;
 	if(level==0)
 	{
-		
 		for(var i=0;i<levelMembers[0].length;i++)
 			getData(levelMembers[level][i],0,1,level,i);
 	}
@@ -29,7 +28,6 @@ function fillLevelWithoutNames(level,array,itemNumber){
 	var sum=0;
  	for(var i=0;i<array.length;i++)
  		sum+=parseInt(array[i].suma);
- 	console.log
  	chartData.push({
     	nume: levelNames[level][itemNumber],
     	value: sum,
@@ -38,7 +36,6 @@ function fillLevelWithoutNames(level,array,itemNumber){
 var object;
 function fillLevelWithNames(level,array,itemNumber){
 	var sum=0;
-	console.log(array);
 	object=array;
  	for(var i=0;i<array.length;i++)
  	{
@@ -52,9 +49,17 @@ function fillLevelWithNames(level,array,itemNumber){
 }
 function compare(a,b)
 {
-	if(a.value<b.value)
-		return true;
-	return false;
+	if(parseInt(a.value)<parseInt(b.value))
+	{
+		console.log("TRUE");
+		return 1;
+	}
+	if(parseInt(a.value)>parseInt(b.value))
+	{
+		console.log("TRUE");
+		return -1;
+	}
+	return 0;
 }
 function getData(array,copii,cerere,level,itemNumber){
 	var data="institutie=";
@@ -66,7 +71,6 @@ function getData(array,copii,cerere,level,itemNumber){
 			data+=",";
 
 	}
-	console.log(data);
 	if(copii==1){
 		data += "&copii=1"
 	}
@@ -76,23 +80,27 @@ function getData(array,copii,cerere,level,itemNumber){
 		url: "ajax/getData.php",
 		data: data,
 		success: function(data){
+			left--;
 			if(cerere==1){
 				fillLevelWithoutNames(level,data["results"],itemNumber);
 				chart.dataProvider = chartData;
 				chart.validateData();
-				//console.log("ALIVE");
 			}
 			if(cerere==2)
 			{
 
 				fillLevelWithNames(level,data["results"],itemNumber);
+			}
+			if(left==1)
+			{
+				console.log(chartData);
 				chartData.sort(compare);
+				console.log(chartData);
 				chart.dataProvider = chartData;
 
 				chart.validateData();
 				chart.animateAgain();
 			}
-			loading=1;
 		}
 	});
 }
