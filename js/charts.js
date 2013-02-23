@@ -48,7 +48,8 @@ AmCharts.ready(function() {
 
     // WRITE
     chart.write("chartdiv");
-    chart.addListener("clickGraphItem",handleClick)
+    chart.addListener("clickGraphItem",handleClick);
+    
     function handleClick(item)
     {
         chartData[item.index];

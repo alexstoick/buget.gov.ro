@@ -52,8 +52,9 @@ function fillLevel(level,id)
 	}
 	if(level==4)
 	{
-		
+
 	}
+
 }
 function fillLevelWithoutNames(level,array,itemNumber){
 	var sum=0;
@@ -103,6 +104,7 @@ function updateData(withAnimation)
 	chartData.sort(compare);
 	chart.dataProvider = chartData;
 	chart.validateData();
+	$("[cursor='pointer']").hide();
 }
 function getData(array,copii,cerere,level,itemNumber){
 	var data="institutie=";
