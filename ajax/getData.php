@@ -40,10 +40,8 @@ foreach($data->entry as $entry){
 		$intrare->$pn = (string)$ns_d->{$xmlPn};
 	}
 
-	$suffixedInstitutions = explode(",",$_GET['institutie']);
-	foreach($suffixedInstitutions as &$elem){ $elem .= "-"; }
 	if(
-		(in_array(substr($intrare->id, 0, strpos($intrare->id,'-')+1), $suffixedInstitutions)) &&
+		(in_array($intrare->id, explode(",",$_GET['institutie']))) &&
 		(
 			(empty($_GET['copii']) && $intrare->idParinte == '0') ||
 			(!empty($_GET['copii']) && $intrare->idParinte != '0')
