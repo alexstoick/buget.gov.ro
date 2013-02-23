@@ -45,7 +45,7 @@ foreach($data->entry as $entry){
 		(
 			(empty($_GET['copii']) && $intrare->idParinte == '0') 
 		) ||
-		(!empty($_GET['copii']) && $intrare->idParinte != '0') //hack needed here.
+		(!empty($_GET['copii']) && $intrare->idParinte != '0' && $intrare->idParinte == $intrare->id ) //hack needed here.
 	){
 		$res['results'][] = $intrare;	
 	}
