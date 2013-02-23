@@ -41,9 +41,20 @@ function fillLevelWithNames(level,array,itemNumber){
 	console.log(array);
 	object=array;
  	for(var i=0;i<array.length;i++)
+ 	{
+ 		var value=parseInt(array[i].suma);
+ 		// if(value>8000000)
+ 		// 	value=8000000;
  		chartData.push({
     		nume: array[i].numeInstitutie,
-    	value: parseInt(array[i].suma)});
+    	value: value});
+ 	}
+}
+function compare(a,b)
+{
+	if(a.value<b.value)
+		return true;
+	return false;
 }
 function getData(array,copii,cerere,level,itemNumber){
 	var data="institutie=";
@@ -75,7 +86,9 @@ function getData(array,copii,cerere,level,itemNumber){
 			{
 
 				fillLevelWithNames(level,data["results"],itemNumber);
+				chartData.sort(compare);
 				chart.dataProvider = chartData;
+
 				chart.validateData();
 				chart.animateAgain();
 			}

@@ -29,7 +29,7 @@ AmCharts.ready(function() {
     // first graph
     var graph1 = new AmCharts.AmGraph();
     graph1.type = "column";
-    graph1.title = "Banii";
+    graph1.title = "Fonduri";
     graph1.valueField = "value";
     graph1.balloonText = "Income:[[value]]";
     graph1.lineAlpha = 0;
