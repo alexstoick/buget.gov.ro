@@ -6,6 +6,7 @@ var levelMembers=[[ministere,altele],[ministere]];
 var levelNames=[["Ministere","Alte insutitii"],[]];
 var nextLevel=[[1,2]];
 var loading=0;
+console.log("loading");
 var level=0;
 var left=0;
 function fillLevel(level)
