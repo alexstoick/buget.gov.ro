@@ -48,10 +48,12 @@ AmCharts.ready(function() {
 
     // WRITE
     chart.write("chartdiv");
-    chart.addListener("clickGraphItem",handleClick)
+    chart.addListener("clickGraphItem",handleClick);
+    
     function handleClick(item)
     {
         chartData[item.index];
+        nameClickedPreviously[currentlyInLevel]=chartData[item.index].nume;
         fillLevel(chartData[item.index].nextLevel,chartData[item.index].itemNumber);    
     }
     fillLevel(0);

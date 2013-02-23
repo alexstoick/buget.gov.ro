@@ -54,8 +54,16 @@ if (empty($g_page)) {
         </div>
       	</div>
     </div>
-
-    <div id="chartdiv" style="width: 100%; height: 600px;"></div> 
+  <div class="row-fluid">
+    <div class="span4" style="text-align:center">
+      <button id="goBack" class="btn btn-large" onclick="goBack()" style="margin-top:10px">Mergi cu un nivel mai sus</button>
+    </div>
+    <div class="span8" style="text-align:center">
+      <h1 id="currentPosition">Esti in</h1>
+    </div>
+  </div>
+  <div id="chartdiv" style="width: 100%; height: 600px;"></div> 
+  
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/amcharts.js"></script>
 	 <script src="js/charts.js"></script>
