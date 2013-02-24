@@ -1,4 +1,5 @@
 var labelType, useGradients, nativeTextSupport, animate;
+var tm;
 
 (function() {
   var ua = navigator.userAgent,
@@ -15,74 +16,69 @@ var labelType, useGradients, nativeTextSupport, animate;
   animate = !(iStuff || !nativeCanvasSupport);
 })();
 
+var jsonNew = [] ;
+
+function initMinistereAndMakeRequest ( )
+{
+	var ministere=[];
+	for(var j=1;j<=2;j++)
+		ministere[j-1]=""+j;
+
+	var data="institutie=";
+	for(var i=0;i<ministere.length;i++)
+	{
+		data+=ministere[i];
+		if(i!=ministere.length-1)
+			data+=",";
+	}
+
+	$.ajax({
+		dataType: "json",
+		url: "ajax/getData.php",
+		data: data ,
+		success: function(data){
+			console.log ( data["results"] ) ;
+			processData ( data["results"] ) ;
+		}
+	});
+}
 
 function init(){
   //init data
 
 var json = {
-    "children": [
-     {
-       "children": [
-         {
-           "children": [], 
-           "data": {
-             "playcount": "276", 
-             "$color": "#8E7032", 
-             "image": "http://userserve-ak.last.fm/serve/300x300/11403219.jpg", 
-             "$area": 276
-           }, 
-           "id": "album-Thirteenth Step", 
-           "name": "Ministerul Finantelor"
-         }, 
-         {
-           "children": [], 
-           "data": {
-             "playcount": "271", 
-             "$color": "#906E32", 
-             "image": "http://userserve-ak.last.fm/serve/300x300/11393921.jpg", 
-             "$area": 271
-           }, 
-           "id": "album-Mer De Noms", 
-           "name": "Ministerul de Interne"
-         }
-       ], 
-       "data": {
-         "playcount": 547, 
+    "children":
+    [
+	     {
+
+			"children": [], 
+			"data": { 
+				"$area": 276
+			}, 
+			"id": "album-Thirteenth Step", 
+			"name": "Ministerul Finantelor"
+		}, 
+		{
+			"children": [], 
+			"data": {
+				"$area": 271
+			}, 
+			"id": "album-Mer De Noms", 
+			"name": "Ministerul de Interne"
+		}
+    ], 
+       "data": { 
          "$area": 547
        }, 
        "id": "artist_A Perfect Circle", 
        "name": "Ministere"
-     }, 
-     {
-       "children": [
-         {
-           "children": [], 
-           "data": {
-             "playcount": "209", 
-             "$color": "#AA5532", 
-             "image": "http://userserve-ak.last.fm/serve/300x300/32349839.jpg", 
-             "$area": 209
-           }, 
-           "id": "album-Above", 
-           "name": "SRI"
-         }
-       ], 
-       "data": {
-         "playcount": 209, 
-         "$area": 209
-       }, 
-       "id": "artist_Mad Season", 
-       "name": "Servicii"
-     }
-   ], 
-   "data": {}, 
-   "id": "root", 
-   "name": "Top Albums"
+
    };
-   
+
+
   //end
   //init TreeMap
-var tm = new $jit.TM.Squarified({  
+tm = new $jit.TM.Squarified({  
   //where to inject the visualization  
   injectInto: 'infovis',  
   //parent box title heights  
@@ -139,7 +135,37 @@ var tm = new $jit.TM.Squarified({
       };  
   }  
 });  
+console.log ( json ) ;
+initMinistereAndMakeRequest();
 tm.loadJSON(json);  
 tm.refresh();
     //end
  }
+
+function processData ( array )
+{
+	var sum=0;
+	object=array;
+ 	for(var i=0;i<array.length;i++)
+ 	{
+ 		var value=parseInt(array[i].Suma);
+ 		var nume;
+
+ 		nume=array[i].NumeInstitutie;
+
+ 		jsonNew.push ( {
+				       "data": { 
+				       	"$color": "#906E32", 
+				         "$area": value
+				       },  
+				       "id":nume,
+				       "name": nume
+     				} );
+ 	}
+ 	console.log ( jsonNew ) ;
+ 	var theReal_JSON = { "children:":jsonNew , "data":{"$area":8191956} , "id": "root",  "name":"total" } ;
+
+ 	console.log ( theReal_JSON ) ;
+ 	// tm.loadJSON ( theReal_JSON ) ;
+ 	// tm.refresh ( ) ;
+}
