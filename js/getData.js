@@ -20,7 +20,7 @@ function goBack()
 //Level 4 : Titluri din interiorul fiecarei institutii
 function fillLevel(level,id)
 {
-	
+	$("#loader").show();
 	currentlyInLevel=level;
 	//STYLING
 	if(level==2)
@@ -123,6 +123,7 @@ function compare(a,b)
 }
 function updateData(withAnimation)
 {
+	$("#loader").hide();
 	chartData.sort(compare);
 	chart.dataProvider = chartData;
 	chart.validateData();

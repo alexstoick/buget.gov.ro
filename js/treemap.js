@@ -21,7 +21,7 @@ var jsonNew = [] ;
 function initMinistereAndMakeRequest ( )
 {
 	var ministere=[];
-	for(var j=1;j<=18;j++)
+	for(var j=1;j<=33;j++)
 		ministere[j-1]=""+j;
 
 	var data="institutie=";
@@ -31,6 +31,7 @@ function initMinistereAndMakeRequest ( )
 		if(i!=ministere.length-1)
 			data+=",";
 	}
+  data += "&copii=1" ;
 
 	$.ajax({
 		dataType: "json",
@@ -52,7 +53,7 @@ tm = new $jit.TM.Squarified({
   //where to inject the visualization  
   injectInto: 'infovis',  
   //parent box title heights  
-  titleHeight: 15,  
+  titleHeight: 0,  
   //enable animations  
   animate: animate,  
   //box offsets  
@@ -104,10 +105,24 @@ initMinistereAndMakeRequest();
     //end
  }
 
+function compare(a,b)
+{
+  if(parseInt(a.Suma)<parseInt(b.Suma))
+  {
+    return 1;
+  }
+  if(parseInt(a.Suma)>parseInt(b.Suma))
+  {
+    return -1;
+  }
+  return 0;
+}
+
 function processData ( array )
 {
+  var colors = [ "#8A29F3" , "#2BBFBD" , "#F2B33D" , "#3D9B30" , "#F22E2E" ];
 	var sum=0;
-	object=array;
+  array.sort(compare);
  	for(var i=0;i<array.length;i++)
  	{
  		var value=parseInt(array[i].Suma);
@@ -119,7 +134,7 @@ function processData ( array )
  		jsonNew.push ( { "children": [],
 				       "data": { 
 				         "$area": value,
-                 "$color":"#"+2*i+"0000" 
+                 "$color":colors[i%5]
 				       },  
 				       "id":i,
 				       "name": nume
