@@ -106,6 +106,14 @@ function updateData(withAnimation)
 	chart.dataProvider = chartData;
 	chart.validateData();
 	$("[cursor='pointer']").hide();
+	$("tbody").empty();
+	for(var i=0;i<chartData.length;i++)
+	{
+		$("tbody").append("<tr><th></th><th></th><th></th></tr>");
+		var currentTr=$('tbody tr th:nth-child('+(i+1)+')');
+		currentTr.find('th:nth-child(1)').text=i+1;
+	}
+	
 }
 function getData(array,copii,cerere,level,itemNumber){
 	console.log(array);

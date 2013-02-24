@@ -63,12 +63,27 @@ if (empty($g_page)) {
     </div>
   </div>
   <div id="chartdiv" style="width: 100%; height: 600px;"></div> 
-  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th> 
+        <th>Nume Instituţie</th>
+        <th>Bugetul alocat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1</th>
+        <th>Ministerul Demo</th>
+        <th>2000000lei</th>
+      </tr>
+    </tbody>
+  </table>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/amcharts.js"></script>
-	 <script src="js/charts.js"></script>
-	  <script src="js/getData.js"></script>
-	  <script src="js/bootstrap.min.js"></script>
+	<script src="js/charts.js"></script>
+	<script src="js/getData.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 	</body>
 </html>
