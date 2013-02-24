@@ -64,9 +64,14 @@ foreach($data->d as $entry){
 	){
 		$res['results'][] = $intrare;	
 	}else{
-		$sumaSectiune += $intrare['Suma'];
-		if($intrare['IdParinte'] == 0){
-			$numeSectiune = $intrare['DenumireIndicator'];
+		if(
+			$intrare['Sectiune'] == $_GET['sectiune'] &&
+			substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
+		){
+			$sumaSectiune += $intrare['Suma'];
+			if(substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'){
+				$numeSectiune = $intrare['DenumireIndicator'];
+			}
 		}
 	}
 }
