@@ -10,6 +10,7 @@ $propNamesURL= strtolower(implode($propNames,','));
 $res = array();
 $res['results'] = array();
 $sumaSectiune = 0;
+$numeSectiune = '';
 
 if(
 	( empty($_GET['institutie']) && empty($_GET['sectiune']) ) ||
@@ -64,11 +65,15 @@ foreach($data->d as $entry){
 		$res['results'][] = $intrare;	
 	}else{
 		$sumaSectiune += $intrare['Suma'];
+		if($intrare['IdParinte'] == 0){
+			$numeSectiune = $intrare['DenumireIndicator'];
+		}
 	}
 }
 
 if(!empty($_GET['suma'])){
 	$res['suma'] = $sumaSectiune;
+	$res['numeSectiune'] = $numeSectiune;
 }
 
 echo json_encode($res);
