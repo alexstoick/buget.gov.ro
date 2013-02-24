@@ -7,6 +7,9 @@ class String
 end
 
 dir = 'sources/anexa/'
+
+puts '"Id","IdParinte","Sectiune","An","NumeInstitutie","DenumireIndicator","Suma"'
+
 Dir.glob(dir + '*.csv') do |file|
 	next if file.start_with?(dir+'sinteza')
 
@@ -22,6 +25,8 @@ Dir.glob(dir + '*.csv') do |file|
 
 	idParinte = 0
 
+	an = 2013
+
 	csv.each do |row|
 
 		firstRow = row.first.to_s.strip
@@ -29,11 +34,11 @@ Dir.glob(dir + '*.csv') do |file|
 
 		unless section == 'none' or row[-2].nil?
 			denumireIndicator = row[-2].to_s.strip
-			suma = row[-1].to_s.strip
+			suma = row[-1].to_s.strip.delete(',')
 
-			puts idInstitutie + "," + idParinte.to_s + "," + section + "," +
-					numeInstitutie + "," + denumireIndicator +
-					',"' + suma + '"'
+			puts '"'+idInstitutie+ '","' + idParinte.to_s + '","' + section + '","' +
+					an.to_s + '","' + numeInstitutie + '","' + denumireIndicator + '","' +
+					suma + '"'
 			idParinte = idInstitutie
 		end
 
