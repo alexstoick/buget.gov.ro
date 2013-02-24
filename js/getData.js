@@ -1,5 +1,5 @@
-var ministere=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,35,54,65]
-var altele=[18];
+var ministere=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,35,54,65];
+var altele = [01,02,03,04,05,06,07,08,09,10,11,13,30,31,32,33,34,37,38,39,40,41,42,43,44,45,46,47,48,50,51,52,53]
 var levelMembers=[[ministere,altele],[ministere]];
 var levelNames=[["Ministere","Alte instituţii"],[]];
 var title=["Bugetul României","Ministerele României"];
@@ -46,7 +46,7 @@ function fillLevel(level,id)
 	if(level==3)
 	{
 		chartData=[];
-		console.log(id);
+
 		getData([id],1,3,level,id);
 	}
 	if(level==4)
@@ -67,20 +67,21 @@ function fillLevelWithoutNames(level,array,itemNumber){
 }
 var object;
 function fillLevelWithNames(level,array,itemNumber,type){
+
 	var sum=0;
 	object=array;
-	console.log(itemNumber);
  	for(var i=0;i<array.length;i++)
  	{
  		var value=parseInt(array[i].Suma);
  		var nume;
+ 		console.log(array[i].IdInstituie);
  		if(type==1)
  			nume=array[i].NumeInstitutie;
  		else
  			nume=array[i].DenumireIndicator;
  		chartData.push({
     		nume: nume,
-    		idForThis: array[i].id,
+    		idForThis: array[i].IdInstitutie,
     		value: value,
     		nextLevel : nextLevel[level][itemNumber]
     });
@@ -124,7 +125,7 @@ function updateData(withAnimation)
  	}
 }
 function getData(array,copii,cerere,level,itemNumber){
-	console.log(array);
+
 	var data="institutie=";
 	loading=0;
 	for(var i=0;i<array.length;i++)
@@ -134,15 +135,17 @@ function getData(array,copii,cerere,level,itemNumber){
 			data+=",";
 
 	}
+
 	if(copii==1){
 		data += "&copii=1"
 	}
-	
+	console.log(data);
 	$.ajax({
 		dataType: "json",
 		url: "ajax/getData.php",
 		data: data,
 		success: function(data){
+			console.log(data);
 			left--;
 			if(cerere==1){
 				fillLevelWithoutNames(level,data["results"],itemNumber);
@@ -161,6 +164,7 @@ function getData(array,copii,cerere,level,itemNumber){
 			}
 			if(cerere==3)
 			{
+				
 				fillLevelWithNames(level,data["results"],itemNumber,2);
 				updateData(true);
 			}
