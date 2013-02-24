@@ -38,7 +38,7 @@ Dir.glob(dir + '*.csv') do |file|
 			denumireIndicator = row[-2].to_s.strip
 			suma = row[-1].to_s.strip.delete(',')
 
-			if idParinte == 0
+			if ARGV[0] == "ids" and idParinte == 0
 				if numeInstitutie.start_with?("Minister")
 					if !idMinistere.include?(idInstitutie)
 						idMinistere.push(idInstitutie)
