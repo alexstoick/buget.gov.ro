@@ -47,20 +47,17 @@ if (empty($g_page)) {
       	</div>
     </div>
     <div style="background-color:#0093e0;height:200px;width:100%">
-    	<h3 style="padding-top:100px;text-align:center;color:white">buget.gov.ro</h3>
+    	<h3 style="padding-top:100px;color:white;padding-left:10%">buget.gov.ro</h3>
+    	<h5 style="padding-left:10%;color:white">este un proiect de transparenta care indexeaza informatii prinvind bugetul de stat al Romaniei</h5>
     </div>
     <ul class="nav nav-tabs">
         <li class="active pull-right"><a href="#">Afisarea pe instituii</a></li>
         <li class="pull-right"><a href="#">Afisarea funcitona</a></li>
         <li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px">Mergi cu un nivel mai sus</button></li>
-        <li class="pull-right"> <a id="currentPosition"></p></li>
+        <li class="pull-right"> <a id="currentPosition"></a></li>
 	</ul>
- 	<div class="row-fluid">
-    	<div class="span4" style="text-align:center">
-      		
-    	</div>
-  	</div>
-  	<div id="chartdiv" style="width: 100%; height: 600px;"></div> 
+
+  	<div id="chartdiv" style="width:100%; height: 600px;"></div> 
   	<table class="table table-bordered">
    		<thead>
       		<tr>

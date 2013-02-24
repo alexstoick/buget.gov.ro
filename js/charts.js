@@ -36,7 +36,7 @@ AmCharts.ready(function() {
     graph1.valueField = "value";
     graph1.balloonText = "Buget:[[value]] lei";
     graph1.lineAlpha = 0;
-    graph1.fillColors = "#ADD981";
+    graph1.fillColors = ["#001e55", "#0093e0"];
     graph1.fillAlphas = 1;
     chart.addGraph(graph1);
 

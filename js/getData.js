@@ -1,6 +1,4 @@
-var ministere=[];
-for(var j=1;j<=18;j++)
-	ministere[j-1]=""+j;
+var ministere=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,35,54,65]
 var altele=[18];
 var levelMembers=[[ministere,altele],[ministere]];
 var levelNames=[["Ministere","Alte instituţii"],[]];
@@ -60,8 +58,8 @@ function fillLevel(level,id)
 function fillLevelWithoutNames(level,array,itemNumber){
 	var sum=0;
  	for(var i=0;i<array.length;i++)
- 		sum+=parseInt(array[i].suma);
- 	chartData.push({
+ 		sum+=parseInt(array[i].Suma);
+ 		chartData.push({
     	nume: levelNames[level][itemNumber],
     	idForThis: itemNumber,
     	value: sum,
@@ -74,12 +72,12 @@ function fillLevelWithNames(level,array,itemNumber,type){
 	console.log(itemNumber);
  	for(var i=0;i<array.length;i++)
  	{
- 		var value=parseInt(array[i].suma);
+ 		var value=parseInt(array[i].Suma);
  		var nume;
  		if(type==1)
- 			nume=array[i].numeInstitutie;
+ 			nume=array[i].NumeInstitutie;
  		else
- 			nume=array[i].denumireIndicator;
+ 			nume=array[i].DenumireIndicator;
  		chartData.push({
     		nume: nume,
     		idForThis: array[i].id,
