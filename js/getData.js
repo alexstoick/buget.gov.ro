@@ -1,10 +1,10 @@
-var ministere=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,35,54,65]
-var altele=[18];
-var levelMembers=[[ministere,altele],[ministere]];
+var ministere=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,35,54,65];
+var altele = [1,2,3,4,5,6,7,8,9,10,11,13,30,31,32,33,34,37,38,39,40,41,42,43,44,45,46,47,48,50,51,52,53];
+var levelMembers=[[ministere,altele],[ministere],[altele]];
 var levelNames=[["Ministere","Alte instituţii"],[]];
 var title=["Bugetul României","Ministerele României"];
-var nextLevel=[[1,2],[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],[],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
-var beforeLevel=[-1,0,0,1];
+var nextLevel=[[1,2],[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+var beforeLevel=[-1,0,0,1,2];
 var loading=0;
 var currentlyInLevel=0;
 var left=0;
@@ -13,23 +13,40 @@ function goBack()
 {
 	fillLevel(beforeLevel[currentlyInLevel]);
 }
+//LEVEL 0 : Ministere si alte institutii
+//Level 1 : Ministere
+//Level 2 : Alte institutii
+//Level 3 : Titluri din interiorul fiecarui minister
+//Level 4 : Titluri din interiorul fiecarei institutii
 function fillLevel(level,id)
 {
 	
 	currentlyInLevel=level;
-
+	//STYLING
+	if(level==2)
+	{
+		$("#chartdiv").addClass("big");
+		$("#chartdiv").removeClass("small");
+	}
+	else
+	{
+		$("#chartdiv").removeClass("big");
+		$("#chartdiv").addClass("small");
+	}
+	//FILLING AND CALLING DATA
 	if(level==0)
 	{
 		chartData=[];
-		$("#currentPosition").text("Te aflii la:"+title[level]);
+		$("#currentPosition").text("Te aflii la: "+title[level]);
 		$("#goBack").hide();
 		left=levelMembers[level].length;
 		for(var i=0;i<levelMembers[level].length;i++)
 			getData(levelMembers[level][i],0,1,level,i);
 	}
+	//MODYIFING
 	if(level!=0)
 	{
-		$("#currentPosition").text("Te aflii la:"+nameClickedPreviously[beforeLevel[level]]);
+		$("#currentPosition").text("Te aflii la: "+nameClickedPreviously[beforeLevel[level]]);
 		$("#goBack").show();
 	}
 	if(level==1)
@@ -41,17 +58,22 @@ function fillLevel(level,id)
 	}
 	if(level==2)
 	{
-		//NEED DATA
+		chartData=[];
+		$("#chartdiv").addClass("big");
+		left=levelMembers[level].length;
+		for(var i=0;i<levelMembers[level].length;i++)
+			getData(levelMembers[level][i],0,2,level,i);
 	}
 	if(level==3)
 	{
 		chartData=[];
-		console.log(id);
 		getData([id],1,3,level,id);
 	}
 	if(level==4)
 	{
-
+		console.log(id);
+		chartData=[];
+		getData([id],1,3,level,id);
 	}
 
 }
@@ -67,9 +89,9 @@ function fillLevelWithoutNames(level,array,itemNumber){
 }
 var object;
 function fillLevelWithNames(level,array,itemNumber,type){
+
 	var sum=0;
 	object=array;
-	console.log(itemNumber);
  	for(var i=0;i<array.length;i++)
  	{
  		var value=parseInt(array[i].Suma);
@@ -80,7 +102,7 @@ function fillLevelWithNames(level,array,itemNumber,type){
  			nume=array[i].DenumireIndicator;
  		chartData.push({
     		nume: nume,
-    		idForThis: array[i].id,
+    		idForThis: array[i].IdInstitutie,
     		value: value,
     		nextLevel : nextLevel[level][itemNumber]
     });
@@ -124,7 +146,7 @@ function updateData(withAnimation)
  	}
 }
 function getData(array,copii,cerere,level,itemNumber){
-	console.log(array);
+
 	var data="institutie=";
 	loading=0;
 	for(var i=0;i<array.length;i++)
@@ -134,10 +156,10 @@ function getData(array,copii,cerere,level,itemNumber){
 			data+=",";
 
 	}
+
 	if(copii==1){
 		data += "&copii=1"
 	}
-	
 	$.ajax({
 		dataType: "json",
 		url: "ajax/getData.php",
@@ -161,6 +183,7 @@ function getData(array,copii,cerere,level,itemNumber){
 			}
 			if(cerere==3)
 			{
+				console.log(data);
 				fillLevelWithNames(level,data["results"],itemNumber,2);
 				updateData(true);
 			}

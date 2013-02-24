@@ -9,6 +9,7 @@ end
 dir = 'sources/anexa/'
 idMinistere = []
 idAltele = []
+idSectiuni = []
 
 puts '"IdInstitutie","IdParinte","Sectiune","An","NumeInstitutie","DenumireIndicator","Suma"'
 
@@ -38,16 +39,15 @@ Dir.glob(dir + '*.csv') do |file|
 			denumireIndicator = row[-2].to_s.strip
 			suma = row[-1].to_s.strip.delete(',')
 
-			if idParinte == 0
-				if numeInstitutie.start_with?("Minister")
-					if !idMinistere.include?(idInstitutie)
-						idMinistere.push(idInstitutie)
-					end
-				else
-					if !idAltele.include?(idInstitutie)
-						idAltele.push(idInstitutie)
+			if ARGV[0] == "ids"
+				if idParinte == 0
+					if numeInstitutie.start_with?("Minister")
+						idMinistere.push(idInstitutie) unless idMinistere.include?(idInstitutie)
+					else
+						idAltele.push(idInstitutie) unless idAltele.include?(idInstitutie)
 					end
 				end
+				idSectiuni.push(section) unless idSectiuni.include?(section)
 			end
 
 			puts '"'+idInstitutie+ '","' + idParinte.to_s + '","' + section + '","' +
@@ -62,4 +62,5 @@ end
 if ARGV[0] == "ids"
 	puts "["+idMinistere.join(",")+"]"
 	puts "["+idAltele.join(",")+"]"
+	puts "["+idSectiuni.join(",")+"]"
 end
