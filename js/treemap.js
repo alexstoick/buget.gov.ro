@@ -21,7 +21,7 @@ var jsonNew = [] ;
 function initMinistereAndMakeRequest ( )
 {
 	var ministere=[];
-	for(var j=1;j<=2;j++)
+	for(var j=1;j<=18;j++)
 		ministere[j-1]=""+j;
 
 	var data="institutie=";
@@ -37,7 +37,6 @@ function initMinistereAndMakeRequest ( )
 		url: "ajax/getData.php",
 		data: data ,
 		success: function(data){
-			console.log ( data["results"] ) ;
 			processData ( data["results"] ) ;
 		}
 	});
@@ -45,35 +44,6 @@ function initMinistereAndMakeRequest ( )
 
 function init(){
   //init data
-
-var json = {
-    "children":
-    [
-	     {
-
-			"children": [], 
-			"data": { 
-				"$area": 276
-			}, 
-			"id": "album-Thirteenth Step", 
-			"name": "Ministerul Finantelor"
-		}, 
-		{
-			"children": [], 
-			"data": {
-				"$area": 271
-			}, 
-			"id": "album-Mer De Noms", 
-			"name": "Ministerul de Interne"
-		}
-    ], 
-       "data": { 
-         "$area": 547
-       }, 
-       "id": "artist_A Perfect Circle", 
-       "name": "Ministere"
-
-   };
 
 
   //end
@@ -110,13 +80,6 @@ tm = new $jit.TM.Squarified({
     onShow: function(tip, node, isLeaf, domElement) {  
       var html = "<div class=\"tip-title\">" + node.name   
         + "</div><div class=\"tip-text\">";  
-      var data = node.data;  
-      if(data.playcount) {  
-        html += "play count: " + data.playcount;  
-      }  
-      if(data.image) {  
-        html += "<img src=\""+ data.image +"\" class=\"album\" />";  
-      }  
       tip.innerHTML =  html;   
     }    
   },  
@@ -135,10 +98,9 @@ tm = new $jit.TM.Squarified({
       };  
   }  
 });  
-console.log ( json ) ;
+
 initMinistereAndMakeRequest();
-tm.loadJSON(json);  
-tm.refresh();
+
     //end
  }
 
@@ -153,19 +115,22 @@ function processData ( array )
 
  		nume=array[i].NumeInstitutie;
 
- 		jsonNew.push ( {
+
+ 		jsonNew.push ( { "children": [],
 				       "data": { 
-				       	"$color": "#906E32", 
-				         "$area": value
+				         "$area": value,
+                 "$color":"#"+2*i+"0000" 
 				       },  
-				       "id":nume,
+				       "id":i,
 				       "name": nume
      				} );
  	}
- 	console.log ( jsonNew ) ;
- 	var theReal_JSON = { "children:":jsonNew , "data":{"$area":8191956} , "id": "root",  "name":"total" } ;
 
- 	console.log ( theReal_JSON ) ;
- 	// tm.loadJSON ( theReal_JSON ) ;
- 	// tm.refresh ( ) ;
+ 	var theReal_JSON = { "children": jsonNew , "id": "root" , "data": { "playcount": 547,"$area":547 } , "name":"total" } ;
+
+
+
+
+ 	tm.loadJSON ( theReal_JSON ) ;
+ 	tm.refresh ( ) ;
 }
