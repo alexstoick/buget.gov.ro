@@ -10,9 +10,9 @@ $propNamesURL= strtolower(implode($propNames,','));
 $res = array();
 $res['results'] = array();
 
-if(empty($_GET['institutie'])){
+if(empty($_GET['institutie']) && empty($_GET['sectiune'])){
 	$res['status'] = -1;
-	$res['error'] = 'Invalid parameters. Valid request is: institutie=1[,2,...][&copii=1]';
+	$res['error'] = 'Invalid parameters. Valid request is: { institutie=1[,2,...][&copii=1] | sectiune=5001 }';
 	echo json_encode($res);
 	die();
 }
@@ -33,13 +33,27 @@ foreach($data->d as $entry){
 	}
 
 	if(
+		!empty($_GET['institutie']) &&
 		(
-			(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
-			(empty($_GET['copii']) && $intrare['IdParinte'] == '0') 
-		) ||
+			// total institutie
+			(
+				(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
+				(empty($_GET['copii']) && $intrare['IdParinte'] == '0') 
+			) ||
+			// copii insitutie
+			(
+				(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
+				(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
+			)
+		)
+		||
+		!empty($_GET['sectiune']) &&
 		(
-			(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
-			(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
+			// sectiune
+			(
+				$intrare['Sectiune'] == $_GET['sectiune'] &&
+				substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
+			)
 		)
 	){
 		$res['results'][] = $intrare;	
