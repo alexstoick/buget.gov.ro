@@ -70,6 +70,7 @@ foreach($data->d as $entry){
 		$res['results'][] = $intrare;	
 	}else{
 		if(
+			!empty($_GET['sectiune']) &&
 			$intrare['Sectiune'] == $_GET['sectiune'] &&
 			substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
 		){
