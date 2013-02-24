@@ -39,7 +39,7 @@ foreach($data->d as $entry){
 		) ||
 		(
 			(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
-			(!empty($_GET['copii']) && $intrare['IdParinte'] != '0')
+			(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
 		)
 	){
 		$res['results'][] = $intrare;	
