@@ -52,12 +52,12 @@ if (empty($g_page)) {
     </div>
     <ul class="nav nav-tabs">
         <li class="active pull-right"><a href="#">Afisarea pe instituii</a></li>
-        <li class="pull-right"><a href="#">Afisarea funcitona</a></li>
+        <li class="pull-right"><a href="#">Afisarea functionala</a></li>
         <li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px">Mergi cu un nivel mai sus</button></li>
         <li class="pull-right"> <a id="currentPosition"></a></li>
 	</ul>
 
-  	<div id="chartdiv" style="width:100%; height: 600px;"></div> 
+  	<div id="chartdiv" style="width:100%; height: 700px;"></div> 
   	<table class="table table-bordered">
    		<thead>
       		<tr>
