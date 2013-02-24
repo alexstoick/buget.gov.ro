@@ -22,7 +22,7 @@ AmCharts.ready(function() {
     var valueAxis = new AmCharts.ValueAxis();
     valueAxis.axisAlpha = 0;
     valueAxis.gridAlpha = 0.1;
-    valueAxis.unit=" lei";
+    // valueAxis.unit=" lei";
     valueAxis.ignoreAxisWidth = true;
     // valueAxis.logarithmic=true;
     valueAxis.position = "top";

@@ -23,7 +23,7 @@ function fillLevel(level,id)
 	if(level==0)
 	{
 		chartData=[];
-		$("#currentPosition").text(title[level]);
+		$("#currentPosition").text("Te aflii la:"+title[level]);
 		$("#goBack").hide();
 		left=levelMembers[level].length;
 		for(var i=0;i<levelMembers[level].length;i++)
@@ -31,7 +31,7 @@ function fillLevel(level,id)
 	}
 	if(level!=0)
 	{
-		$("#currentPosition").text(nameClickedPreviously[beforeLevel[level]]);
+		$("#currentPosition").text("Te aflii la:"+nameClickedPreviously[beforeLevel[level]]);
 		$("#goBack").show();
 	}
 	if(level==1)
@@ -87,6 +87,7 @@ function fillLevelWithNames(level,array,itemNumber,type){
     		nextLevel : nextLevel[level][itemNumber]
     });
  	}
+ 	
 }
 function compare(a,b)
 {
@@ -110,10 +111,19 @@ function updateData(withAnimation)
 	for(var i=0;i<chartData.length;i++)
 	{
 		$("tbody").append("<tr><th></th><th></th><th></th></tr>");
-		var currentTr=$('tbody tr th:nth-child('+(i+1)+')');
-		currentTr.find('th:nth-child(1)').text=i+1;
+		var currentTr=$('tbody tr:nth-child('+(i+1)+')');
+		currentTr.find('th:nth-child(1)').text(i+1);
+		currentTr.find('th:nth-child(2)').text(chartData[i].nume);
+		currentTr.find('th:nth-child(3)').text(chartData[i].value+' lei');
 	}
-	
+	if(currentlyInLevel==0 || currentlyInLevel ==1 )
+ 	{
+ 		$("#tipTabel").text("Nume institutie");
+ 	}
+ 	if(currentlyInLevel==3)
+ 	{
+ 		$("#tipTabel").text("Nume titlu");
+ 	}
 }
 function getData(array,copii,cerere,level,itemNumber){
 	console.log(array);

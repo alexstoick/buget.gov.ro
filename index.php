@@ -27,58 +27,56 @@ if (empty($g_page)) {
 	
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		 <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
+      /*body {
+        padding-top: 60px;  60px to make the container go all the way to the bottom of the topbar 
+      }*/
     </style>
 		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
 	    <div class="navbar-inner">
-    		<div class="container">
-          		<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-          		</button>
-          		<a class="brand" href="#">Bugetul Romaniei</a>
-          		<div class="nav-collapse collapse">
-            	<ul class="nav">
-              		<li class="active"><a href="#">Petitii</a></li>
-              		<li><a href="#about">Angajati</a></li>
-              		<li><a href="#contact">Posturi</a></li>
-            	</ul>
-          	</div><!--/.nav-collapse -->
+    		<div class="container " id="navbarContainer">
+
+          		<a class="brand pull-right"  href="#" style="color:white;float:right">Site oficial al Guvernului Romaniei</a>
+          		<a class="brand pull-right"  id="logo"href="#"   style="color:white;float:right"><img src="img/stema.png"></a>
+
         </div>
       	</div>
     </div>
-  <div class="row-fluid">
-    <div class="span4" style="text-align:center">
-      <button id="goBack" class="btn btn-large" onclick="goBack()" style="margin-top:10px">Mergi cu un nivel mai sus</button>
+    <div style="background-color:#0093e0;height:200px;width:100%">
+    	<h3 style="padding-top:100px;text-align:center;color:white">buget.gov.ro</h3>
     </div>
-    <div class="span8" style="text-align:center">
-      <h1 id="currentPosition">Esti in</h1>
-    </div>
-  </div>
-  <div id="chartdiv" style="width: 100%; height: 600px;"></div> 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>#</th> 
-        <th>Nume Instituţie</th>
-        <th>Bugetul alocat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>1</th>
-        <th>Ministerul Demo</th>
-        <th>2000000lei</th>
-      </tr>
-    </tbody>
-  </table>
+    <ul class="nav nav-tabs">
+        <li class="active pull-right"><a href="#">Afisarea pe instituii</a></li>
+        <li class="pull-right"><a href="#">Afisarea funcitona</a></li>
+        <li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px">Mergi cu un nivel mai sus</button></li>
+        <li class="pull-right"> <a id="currentPosition"></p></li>
+	</ul>
+ 	<div class="row-fluid">
+    	<div class="span4" style="text-align:center">
+      		
+    	</div>
+  	</div>
+  	<div id="chartdiv" style="width: 100%; height: 600px;"></div> 
+  	<table class="table table-bordered">
+   		<thead>
+      		<tr>
+        		<th>#</th> 
+        		<th id="tipTabel">Nume Instituţie</th>
+        		<th>Bugetul alocat</th>
+      		</tr>
+ 		</thead>
+   	 	<tbody>
+      		<tr>
+        		<th>1</th>
+        		<th>Ministerul Demo</th>
+       			<th>2000000lei</th>
+      		</tr>
+    	</tbody>
+	</table>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="js/amcharts.js"></script>
 	<script src="js/charts.js"></script>

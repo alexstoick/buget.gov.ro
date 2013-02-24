@@ -1,7 +1,28 @@
-#footer {
-	text-align:right;
-	color:#ccc;
+tbody{
+	font-size:12px;
+	font-weight: normal;
 }
-body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
+#navbarContainer .navbar-inner .navbar{
+	background-color: #001e55;
+	background-image: none;
+  	background-repeat: no-repeat;
+ 	filter: none;
+}
+.brand
+{
+	padding:0px;
+	margin:0px;
+}
+#logo
+{
+  background: url(images/logo.png) no-repeat left center;
+  height: 20px;
+  width: 100px;
+  padding-right:0px;
+}
+img{
+	pading:0px;
+}
+#currentPosition{
+	color:black;
+}
