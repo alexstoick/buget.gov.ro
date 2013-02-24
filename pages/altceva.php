@@ -15,5 +15,5 @@
   <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/amcharts.js"></script>
-  <script src="js/charts.js"></script>
-  <script src="js/getData.js"></script>
+  <script src="js/charts2.js"></script>
+  <script src="js/getData2.js"></script>

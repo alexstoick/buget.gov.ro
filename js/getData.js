@@ -160,13 +160,16 @@ function getData(array,copii,cerere,level,itemNumber){
 	if(copii==1){
 		data += "&copii=1"
 	}
+	console.log(data);
 	$.ajax({
 		dataType: "json",
 		url: "ajax/getData.php",
 		data: data,
 		success: function(data){
 			left--;
+			console.log(data);
 			if(cerere==1){
+				console.log(left);
 				fillLevelWithoutNames(level,data["results"],itemNumber);
 				if(left==0)
 				{
