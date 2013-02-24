@@ -67,11 +67,7 @@ if (empty($g_page)) {
       		</tr>
  		</thead>
    	 	<tbody>
-      		<tr>
-        		<th>1</th>
-        		<th>Ministerul Demo</th>
-       			<th>2000000lei</th>
-      		</tr>
+      		
     	</tbody>
 	</table>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
