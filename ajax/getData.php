@@ -9,10 +9,14 @@ $propNamesURL= strtolower(implode($propNames,','));
 
 $res = array();
 $res['results'] = array();
+$sumaSectiune = 0;
 
-if(empty($_GET['institutie']) && empty($_GET['sectiune'])){
+if(
+	( empty($_GET['institutie']) && empty($_GET['sectiune']) ) ||
+	( !empty($_GET['suma']) && empty($_GET['sectiune']) )
+){
 	$res['status'] = -1;
-	$res['error'] = 'Invalid parameters. Valid request is: { institutie=1[,2,...][&copii=1] | sectiune=5001 }';
+	$res['error'] = 'Invalid parameters. Valid request is: { institutie=1[,2,...][&copii=1] | sectiune=5001[&suma] }';
 	echo json_encode($res);
 	die();
 }
@@ -32,32 +36,39 @@ foreach($data->d as $entry){
 		$intrare[$pn] = (string)$entry->$apiPn;
 	}
 
-	if(
-		!empty($_GET['institutie']) &&
-		(
-			// total institutie
+	if( empty($_GET['suma']) && (
+			!empty($_GET['institutie']) &&
 			(
-				(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
-				(empty($_GET['copii']) && $intrare['IdParinte'] == '0') 
-			) ||
-			// copii insitutie
-			(
-				(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
-				(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
+				// total institutie
+				(
+					(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
+					(empty($_GET['copii']) && $intrare['IdParinte'] == '0') 
+				) ||
+				// copii insitutie
+				(
+					(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
+					(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
+				)
 			)
-		)
-		||
-		!empty($_GET['sectiune']) &&
-		(
-			// sectiune
+			||
+			!empty($_GET['sectiune']) &&
 			(
-				$intrare['Sectiune'] == $_GET['sectiune'] &&
-				substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
+				// sectiune
+				(
+					$intrare['Sectiune'] == $_GET['sectiune'] &&
+					substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
+				)
 			)
 		)
 	){
 		$res['results'][] = $intrare;	
+	}else{
+		$sumaSectiune += $intrare['Suma'];
 	}
+}
+
+if(!empty($_GET['suma'])){
+	$res['suma'] = $sumaSectiune;
 }
 
 echo json_encode($res);
