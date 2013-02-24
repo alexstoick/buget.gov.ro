@@ -2,6 +2,7 @@
 	<head>
     <link type="text/css" href="css/base.css" rel="stylesheet" />
     <link type="text/css" href="css/Treemap.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/jit.js"></script>
 		<script src="js/treemap.js"></script>
 
