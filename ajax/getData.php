@@ -3,8 +3,8 @@
 require_once('../model/RestServiceClient.php');
 require_once('../model/IntrareBuget.php');
 
-$propNames = array('id','idParinte','numeInstitutie',
-	'denumireIndicator','tipIntrare','suma');
+$propNames = array('IdInstitutie','IdParinte','Sectiune',
+	'NumeInstitutie','An','DenumireIndicator','Suma');
 $propNamesURL= strtolower(implode($propNames,','));
 
 $res = array();
@@ -28,18 +28,18 @@ foreach($data->d as $entry){
 	$intrare = array();
 	
 	foreach($propNames as $pn){
-		$apiPn = strtolower($pn);	
+		$apiPn = strtolower($pn);
 		$intrare[$pn] = (string)$entry->$apiPn;
 	}
 
 	if(
 		(
-			(in_array($intrare['id'], explode(",",$_GET['institutie']))) &&
-			(empty($_GET['copii']) && $intrare['idParinte'] == '0') 
+			(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
+			(empty($_GET['copii']) && $intrare['IdParinte'] == '0') 
 		) ||
 		(
-			(in_array($intrare['idParinte'], explode(",",$_GET['institutie']))) &&
-			(!empty($_GET['copii']) && $intrare['idParinte'] != '0')
+			(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
+			(!empty($_GET['copii']) && $intrare['IdParinte'] != '0')
 		)
 	){
 		$res['results'][] = $intrare;	

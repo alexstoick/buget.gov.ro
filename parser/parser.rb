@@ -8,7 +8,7 @@ end
 
 dir = 'sources/anexa/'
 
-puts '"Id","IdParinte","Sectiune","An","NumeInstitutie","DenumireIndicator","Suma"'
+puts '"IdInstitutie","IdParinte","Sectiune","An","NumeInstitutie","DenumireIndicator","Suma"'
 
 Dir.glob(dir + '*.csv') do |file|
 	next if file.start_with?(dir+'sinteza')
