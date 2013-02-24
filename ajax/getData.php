@@ -7,6 +7,11 @@ $propNames = array('IdInstitutie','IdParinte','Sectiune',
 	'NumeInstitutie','An','DenumireIndicator','Suma');
 $propNamesURL= strtolower(implode($propNames,','));
 
+if(isset($_GET['manduc'])){
+	echo 'MANDUC &hearts;';
+	die();
+}
+
 $res = array();
 $res['results'] = array();
 $sumaSectiune = 0;
