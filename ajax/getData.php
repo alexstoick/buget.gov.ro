@@ -12,7 +12,7 @@ $res['results'] = array();
 
 if(empty($_GET['institutie'])){
 	$res['status'] = -1;
-	$res['error'] = 'Invalid parameters. Valid request is: institutie=MAE[,MAI,...][&copii=1]';
+	$res['error'] = 'Invalid parameters. Valid request is: institutie=1[,2,...][&copii=1]';
 	echo json_encode($res);
 	die();
 }
