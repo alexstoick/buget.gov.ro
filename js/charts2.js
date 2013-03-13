@@ -1,5 +1,6 @@
 var chart;
 var legend;
+var graph1;
 var chartData=new Array();
 AmCharts.ready(function() {
 	  chart = new AmCharts.AmSerialChart();
@@ -26,7 +27,7 @@ AmCharts.ready(function() {
 
 	// valueAxis.unit=" lei";
 	valueAxis.ignoreAxisWidth = true;
-	valueAxis.logarithmic=true;
+	//valueAxis.logarithmic=true;
 
 	//solved the fucking last label
 	valueAxis.showLastLabel = false ;
@@ -39,7 +40,7 @@ AmCharts.ready(function() {
 
 	// GRAPHS
 	// first graph
-	var graph1 = new AmCharts.AmGraph();
+	graph1 = new AmCharts.AmGraph();
 	graph1.type = "column";
 	graph1.title = "Fonduri";
 	graph1.valueField = "value";
@@ -48,6 +49,8 @@ AmCharts.ready(function() {
 	graph1.lineAlpha = 0;
 	graph1.fillColors = ["#001e55", "#0093e0"];
 	graph1.fillAlphas = 1;
+	graph1.labelPosition = "left" ;
+	graph1.labelText = "[[value]]" ;
 	chart.addGraph(graph1);
 
 	// LEGEND
@@ -58,6 +61,13 @@ AmCharts.ready(function() {
 	// WRITE
 	chart.write("chartdiv");
 	chart.addListener("clickGraphItem",handleClick);
+	chart.addListener("rollOverGraphItem",handleRollOver ) ;
+
+	function handleRollOver ( data )
+	{
+		//rgb(211, 206, 80);
+		console.log ( data ) ;
+	}
 
 	function handleClick(item)
 	{
