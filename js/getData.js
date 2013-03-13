@@ -34,7 +34,7 @@ function fillLevel(level,id)
         $("#chartdiv").addClass("small");
     }
     //FILLING AND CALLING DATA
-    if(level==0)
+    if(level===0)
     {
         chartData=[];
         $("#currentPosition").text("Te aflii la: "+title[level]);
@@ -53,7 +53,7 @@ function fillLevel(level,id)
     {
         chartData=[];
         left=levelMembers[level].length;
-        for(var i=0;i<levelMembers[level].length;i++)
+        for( var i=0;i<levelMembers[level].length;i++)
             getData(levelMembers[level][i],0,2,level,i);
     }
     if(level==2)
@@ -107,7 +107,7 @@ function fillLevelWithNames(level,array,itemNumber,type){
             nextLevel : nextLevel[level][itemNumber]
     });
     }
-    
+
 }
 function compare(a,b)
 {
@@ -137,7 +137,7 @@ function updateData(withAnimation)
         currentTr.find('th:nth-child(2)').text(chartData[i].nume);
         currentTr.find('th:nth-child(3)').text(chartData[i].value+' lei');
     }
-    if(currentlyInLevel==0 || currentlyInLevel ==1 )
+    if(currentlyInLevel===0 || currentlyInLevel ==1 )
     {
         $("#tipTabel").text("Nume institutie");
     }
@@ -159,7 +159,7 @@ function getData(array,copii,cerere,level,itemNumber){
     }
 
     if(copii==1){
-        data += "&copii=1"
+        data += "&copii=1" ;
     }
     console.log(data);
     $.ajax({
@@ -172,7 +172,7 @@ function getData(array,copii,cerere,level,itemNumber){
             if(cerere==1){
                 console.log(left);
                 fillLevelWithoutNames(level,data["results"],itemNumber);
-                if(left==0)
+                if(left===0)
                 {
                 updateData(true);
                 }
@@ -180,7 +180,7 @@ function getData(array,copii,cerere,level,itemNumber){
             if(cerere==2)
             {
                 fillLevelWithNames(level,data["results"],itemNumber,1);
-                if(left==0)
+                if(left===0)
                 {
                     updateData(true);
                 }
@@ -191,7 +191,7 @@ function getData(array,copii,cerere,level,itemNumber){
                 fillLevelWithNames(level,data["results"],itemNumber,2);
                 updateData(true);
             }
-            
+
         }
     });
 }

@@ -32,11 +32,11 @@ function actv($str){
 	<meta name="author" content="">
 
 	<title>buget.gov.ro – <?php echo str_replace("-"," ",ucwords($g_page)); ?></title>
-	
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<style>
 		/*body {
-		padding-top: 60px;  60px to make the container go all the way to the bottom of the topbar 
+		padding-top: 60px;  60px to make the container go all the way to the bottom of the topbar
 		}*/
 	</style>
 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
@@ -62,7 +62,7 @@ function actv($str){
 		<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px">Mergi cu un nivel mai sus</button></li>
 		<li class="pull-right"> <a id="currentPosition"></a></li>
 	</ul>
-	
+
 	<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
 		 include(PATH_ROOT.'pages/not_found.php');
 	}

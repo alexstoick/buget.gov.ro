@@ -1,8 +1,8 @@
-<div id="chartdiv" style="width:100%; height: 700px;"></div> 
+<div id="chartdiv" style="width:100%; height: 700px;"></div>
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th>#</th> 
+			<th>#</th>
 			<th id="tipTabel">Nume Instituţie</th>
 			<th>Bugetul alocat</th>
 		</tr>
