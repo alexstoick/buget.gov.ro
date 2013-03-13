@@ -35,6 +35,9 @@ AmCharts.ready(function() {
 	valueAxis.position = "top";
 	chart.addValueAxis(valueAxis);
 
+	valueAxis.usePrefixes = true ;
+
+
 	// GRAPHS
 	// first graph
 	var graph1 = new AmCharts.AmGraph();

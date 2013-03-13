@@ -8,7 +8,7 @@ AmCharts.ready(function() {
 	chart.startDuration = 1;
 	chart.plotAreaBorderColor = "#DADADA";
 	chart.plotAreaBorderAlpha = 1;
-	// this single line makes the chart a bar chart          
+	// this single line makes the chart a bar chart
 	chart.rotate = true;
 
 	// AXES
@@ -26,7 +26,14 @@ AmCharts.ready(function() {
 
 	// valueAxis.unit=" lei";
 	valueAxis.ignoreAxisWidth = true;
-	// valueAxis.logarithmic=true;
+	valueAxis.logarithmic=true;
+
+	//solved the fucking last label
+	valueAxis.showLastLabel = false ;
+	valueAxis.usePrefixes = true ;
+
+	//valueAxis.maximum = 4000000;
+
 	valueAxis.position = "top";
 	chart.addValueAxis(valueAxis);
 
@@ -43,10 +50,9 @@ AmCharts.ready(function() {
 	graph1.fillAlphas = 1;
 	chart.addGraph(graph1);
 
-  
-
 	// LEGEND
 	var legend = new AmCharts.AmLegend();
+
 	chart.addLegend(legend);
 
 	// WRITE
@@ -55,11 +61,11 @@ AmCharts.ready(function() {
 
 	function handleClick(item)
 	{
-		if(currentlyInLevel==0)
+		if(currentlyInLevel===0)
 		{
 			nameClickedPreviously=chartData[item.index].nume;
-			fillLevel(1,chartData[item.index].idForThis);  
-		} 
+			fillLevel(1,chartData[item.index].idForThis);
+		}
 	}
 	fillLevel(0,0);
 });
