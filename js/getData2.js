@@ -72,7 +72,6 @@ function getData(tipRequest,id)
         url: "ajax/getData.php",
         data: data,
         success: function(data){
-            console.log(left);
             left--;
             if(tipRequest==1)
             {
@@ -85,7 +84,6 @@ function getData(tipRequest,id)
             else
             {
                 var array=data["results"];
-                console.log(array);
 
                 for(var i=0;i<array.length;i++)
                 {

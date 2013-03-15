@@ -2,13 +2,13 @@ var chart;
 var legend;
 var chartData=[] ;
 AmCharts.ready(function() {
+
 	chart = new AmCharts.AmSerialChart();
 	chart.dataProvider = chartData;
 	chart.categoryField = "nume";
 	chart.startDuration = 1;
 	chart.plotAreaBorderColor = "#DADADA";
 	chart.plotAreaBorderAlpha = 1;
-	// this single line makes the chart a bar chart
 	chart.rotate = true;
 
 	// AXES
@@ -21,36 +21,23 @@ AmCharts.ready(function() {
 	// Value
 	var valueAxis = new AmCharts.ValueAxis();
 	valueAxis.axisAlpha = 0;
-
-	//better visualization of grid
 	valueAxis.gridAlpha = 0.2;
-
-	//solved the fucking last label
 	valueAxis.showLastLabel = false ;
-
-	// valueAxis.unit=" lei";
 	valueAxis.ignoreAxisWidth = true;
-	// valueAxis.logarithmic=true;
-
 	valueAxis.position = "top";
+	valueAxis.usePrefixes = true ;
 	chart.addValueAxis(valueAxis);
 
-	valueAxis.usePrefixes = true ;
-
-
 	// GRAPHS
-	// first graph
-	var graph1 = new AmCharts.AmGraph();
-	graph1.type = "column";
-	graph1.title = "Fonduri";
-	graph1.valueField = "value";
-	graph1.balloonText = "Buget:[[value]] lei";
-	graph1.lineAlpha = 0;
-	graph1.fillColors = ["#001e55", "#0093e0"];
-	graph1.fillAlphas = 1;
-	chart.addGraph(graph1);
-
-
+	var graph = new AmCharts.AmGraph();
+	graph.type = "column";
+	graph.title = "Fonduri";
+	graph.valueField = "value";
+	graph.balloonText = "Buget:[[value]] lei";
+	graph.lineAlpha = 0;
+	graph.fillColors = ["#001e55", "#0093e0"];
+	graph.fillAlphas = 1;
+	chart.addGraph(graph);
 
 	// LEGEND
 	var legend = new AmCharts.AmLegend();
@@ -62,7 +49,6 @@ AmCharts.ready(function() {
 
 	function handleClick(item)
 	{
-		console.log(chartData[item.index]);
 		nameClickedPreviously[currentlyInLevel]=chartData[item.index].nume;
 		fillLevel(chartData[item.index].nextLevel,chartData[item.index].idForThis);
 	}

@@ -1,6 +1,6 @@
 var chart;
 var legend;
-var graph1;
+var graph;
 var chartData= [];
 AmCharts.ready(function() {
 	chart = new AmCharts.AmSerialChart();
@@ -9,7 +9,6 @@ AmCharts.ready(function() {
 	chart.startDuration = 1;
 	chart.plotAreaBorderColor = "#DADADA";
 	chart.plotAreaBorderAlpha = 1;
-	// this single line makes the chart a bar chart
 	chart.rotate = true;
 
 	// AXES
@@ -24,50 +23,32 @@ AmCharts.ready(function() {
 	valueAxis.axisAlpha = 0;
 	valueAxis.gridAlpha = 0.1;
 	valueAxis.totalText = "[[total]]";
-
-	// valueAxis.unit=" lei";
 	valueAxis.ignoreAxisWidth = true;
-	//valueAxis.logarithmic=true;
-
-	//solved the fucking last label
 	valueAxis.showLastLabel = false ;
 	valueAxis.usePrefixes = true ;
-
-	//valueAxis.maximum = 4000000;
-
 	valueAxis.position = "top";
 	chart.addValueAxis(valueAxis);
 
 	// GRAPHS
-	// first graph
-	graph1 = new AmCharts.AmGraph();
-	graph1.type = "column";
-	graph1.title = "Fonduri";
-	graph1.valueField = "value";
-
-	graph1.balloonText = "Buget:[[value]] lei";
-	graph1.lineAlpha = 0;
-	graph1.fillColors = ["#001e55", "#0093e0"];
-	graph1.fillAlphas = 1;
-	graph1.labelPosition = "left" ;
-	graph1.labelText = "[[value]]" ;
-	chart.addGraph(graph1);
+	graph = new AmCharts.AmGraph();
+	graph.type = "column";
+	graph.title = "Fonduri";
+	graph.valueField = "value";
+	graph.balloonText = "Buget:[[value]] lei";
+	graph.lineAlpha = 0;
+	graph.fillColors = ["#001e55", "#0093e0"];
+	graph.fillAlphas = 1;
+	graph.labelPosition = "left" ;
+	graph.labelText = "[[value]]" ;
+	chart.addGraph(graph);
 
 	// LEGEND
 	var legend = new AmCharts.AmLegend();
-
 	chart.addLegend(legend);
 
 	// WRITE
 	chart.write("chartdiv");
 	chart.addListener("clickGraphItem",handleClick);
-	chart.addListener("rollOverGraphItem",handleRollOver ) ;
-
-	function handleRollOver ( data )
-	{
-		//rgb(211, 206, 80);
-		console.log ( data ) ;
-	}
 
 	function handleClick(item)
 	{
