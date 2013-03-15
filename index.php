@@ -57,7 +57,7 @@ function resurse($str){
 				</div>
 			</div>
 		</div>
-		<div class="hero-unit" id="baraVerde">
+		<div class="hero-unit" id="baraVerde" >
 			<div class="container">
 			<h3 style="color:white;margin-top:0%">BUGET.GOV.RO</h3>
 			

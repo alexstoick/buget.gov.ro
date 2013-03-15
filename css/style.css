@@ -63,13 +63,20 @@ border-bottom:1px solid #ddd;
 	height:600px;
 }
 #baraVerde{
+	background-image: -webkit-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:    -moz-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:     -ms-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:      -o-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:         linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-color:#7daa20;
 	height:50px;
 	width:100%;
 	position:absolute;
 	top:0%;
 	z-index: -100;
+		
 }
 .mainDiv{
 	margin-top:132px;
+
 }
