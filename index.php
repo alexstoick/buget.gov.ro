@@ -20,7 +20,7 @@ function actv($str){
 }
 function resurse($str){
 	global $g_page;
-	if($g_page==$str)
+	if($g_page!='fct' && $g_page!='inst')
 		return 'none';
 	else
 		return 'true';
