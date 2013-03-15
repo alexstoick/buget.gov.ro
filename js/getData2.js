@@ -56,7 +56,7 @@ function updateData()
         var currentTr=$('tbody tr:nth-child('+(i+1)+')');
         currentTr.find('th:nth-child(1)').text(i+1);
         currentTr.find('th:nth-child(2)').text(chartData[i].nume);
-        currentTr.find('th:nth-child(3)').text(chartData[i].value+' lei');
+        currentTr.find('th:nth-child(3)').text(chartData[i].value+' lei mil');
     }
 }
 function getData(tipRequest,id)

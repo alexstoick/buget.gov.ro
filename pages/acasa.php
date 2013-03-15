@@ -1,4 +1,20 @@
 <div class="row">
+	<div class="span3">
+		<ul class="nav nav-tabs nav-stacked">
+			<li class="active">
+				<a href="#">Istoria Bugetului</a>
+			</li>
+			<li>
+				<a href="#">Agenda Bugetului</a>
+			</li>
+			<li>
+				<a href="#">Cum se hotaraste bugetul</a>
+			</li>
+			<li>
+				<a href="#">Gov.ro</a>
+			</li>
+		</ul>
+	</div>
 	<div class="span9">
 		<h1 style="text-align:center">Bugetul Romaniei</h1>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eros massa. Curabitur gravida pulvinar mollis. Mauris vitae erat vitae purus venenatis tincidunt eleifend nec mauris. Quisque malesuada blandit odio sed fermentum. Sed ultricies posuere mauris, et feugiat odio sollicitudin vitae. Etiam fringilla ligula quis nisi mattis semper. In convallis malesuada dui ut lacinia.
@@ -31,21 +47,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="span3">
-		<ul class="nav nav-tabs nav-stacked">
-			<li class="active">
-				<a href="#">Istoria Bugetului</a>
-			</li>
-			<li>
-				<a href="#">Agenda Bugetului</a>
-			</li>
-			<li>
-				<a href="#">Cum se hotaraste bugetul</a>
-			</li>
-			<li>
-				<a href="#">Gov.ro</a>
-			</li>
-		</ul>
-	</div>
+	
 </div>
 
