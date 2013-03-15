@@ -66,10 +66,11 @@ function resurse($str){
 		<div class="container mainDiv" >
 			<div id="loader" style="position:absolute;right:25px;top:90px;display:<?php echo resurse('resurse'); ?>" ><img src="img/loader.gif" width="50"></div>
 			<ul class="nav nav-tabs" style="background-color:#e7e7e7">
-				<li class="pull-left"> <a id="currentPosition"></a></li>
-				<li class="pull-right <?php echo actv('acasa'); ?>"><a href="acasa">Afisarea pe instituii</a></li>
-				<li class="pull-right <?php echo actv('fct'); ?>"><a href="fct">Afisarea functionala</a></li>
-				<li class="pull-right <?php echo actv('resurse'); ?>" ><a href="resurse">Resurse</a></li>
+				<li class="pull-right"> <a id="currentPosition"></a></li>
+				<li class="pull-left <?php echo actv('acasa'); ?>"><a href="acasa"><i class="icon-home"></i></a></li>
+				<li class="pull-left <?php echo actv('inst'); ?>"><a href="inst">Afisarea pe instituii</a></li>
+				<li class="pull-left <?php echo actv('fct'); ?>"><a href="fct">Afisarea functionala</a></li>
+				<li class="pull-left <?php echo actv('resurse'); ?>" ><a href="resurse">Resurse</a></li>
 				<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px;display:<?php echo resurse('resurse'); ?>">Mergi cu un nivel mai sus</button></li>
 
 			</ul>
