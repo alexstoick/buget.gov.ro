@@ -13,12 +13,13 @@ function goBack()
 {
     fillLevel(beforeLevel[currentlyInLevel]);
 }
+
 //LEVEL 0 : Ministere si alte institutii
 //Level 1 : Ministere
 //Level 2 : Alte institutii
 //Level 3 : Titluri din interiorul fiecarui minister
 //Level 4 : Titluri din interiorul fiecarei institutii
-function fillLevel(level,id)
+function fillLevel ( level, id )
 {
     if ( level == -1 )
         return ;
@@ -47,19 +48,19 @@ function fillLevel(level,id)
         for( i=0; i < levelMembers[level].length; ++i )
             getData(levelMembers[level][i],0,1,level,i);
     }
-    if(level!==0)
+    if ( level !== 0 )
     {
         $("#currentPosition").text("Te aflii la: "+nameClickedPreviously[beforeLevel[level]]);
         $("#goBack").show();
     }
-    if(level==1)
+    if ( level == 1 )
     {
         chartData=[];
         left=levelMembers[level].length;
         for( i=0; i < levelMembers[level].length ; ++i )
             getData ( levelMembers[level][i] , 0, 2, level, i );
     }
-    if(level==2)
+    if ( level == 2 )
     {
         chartData=[];
         $("#chartdiv").addClass("big");
@@ -67,21 +68,20 @@ function fillLevel(level,id)
         for( i=0; i < levelMembers[level].length; ++ i )
             getData(levelMembers[level][i],0,2,level,i);
     }
-    if(level==3)
+    if ( level == 3 )
     {
         chartData=[];
         getData([id],1,3,level,id);
     }
-    if(level==4)
+    if ( level == 4 )
     {
-        console.log(id);
         chartData=[];
         getData([id],1,3,level,id);
     }
 }
 
 //Used for the first 'Ministere' and 'Others'
-function fillLevelWithoutNames(level,array,itemNumber)
+function fillLevelWithoutNames ( level, array, itemNumber )
 {
     var sum=0;
     for(var i=0;i<array.length;i++)
@@ -113,7 +113,7 @@ function fillLevelWithNames(level,array,itemNumber,type)
     });
     }
 }
-function compare(a,b)
+function compare ( a, b )
 {
     if ( parseInt(a.value,10) < parseInt(b.value,10) )
         return 1;
@@ -123,7 +123,7 @@ function compare(a,b)
 
     return 0;
 }
-function updateData(withAnimation)
+function updateData ( withAnimation )
 {
     $("#loader").hide();
     chartData.sort(compare);
@@ -149,8 +149,8 @@ function updateData(withAnimation)
         $("#tipTabel").text("Nume titlu");
     }
 }
-function getData(array,copii,cerere,level,itemNumber){
-
+function getData ( array, copii, cerere, level, itemNumber )
+{
     var data="institutie=";
     loading=0;
     for(var i=0;i<array.length;i++)
@@ -158,12 +158,11 @@ function getData(array,copii,cerere,level,itemNumber){
         data+=array[i];
         if(i!=array.length-1)
             data+=",";
-
     }
 
-    if(copii==1){
+    if(copii==1)
         data += "&copii=1" ;
-    }
+
     $.ajax({
         dataType: "json",
         url: "ajax/getData.php",
