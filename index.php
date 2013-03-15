@@ -38,47 +38,57 @@ function resurse($str){
 	<meta name="author" content="">
 
 	<title>buget.gov.ro – <?php echo str_replace("-"," ",ucwords($g_page)); ?></title>
-
+	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<style>
-		/*body {
-		padding-top: 60px;  60px to make the container go all the way to the bottom of the topbar
-		}*/
-		</style>
-		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div class="navbar navbar-fixed-top">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</style>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+
+</head>
+<body>
+	<div class="baraSus">
+		<div class="container " id="navbarContainer">
+			<a class="brand pull-right hidden-phone"  href="#" style="color:white;float:right;font-size:1em"><h5>Site oficial al Guvernului Romaniei</a>>
+			<a class="brand pull-right"  id="logo"href="#"   style="color:white;float:right"><img src="img/stema.png"></a>
+		</div>
+	</div>
+
+	<div class="hero-unit" id="baraVerde" >
+		<div class="container">
+			<h3 style="color:white;margin-top:0%">BUGET.GOV.RO</h3>
+
+		</div>
+	</div>
+	<div class="container mainDiv" >
+		<div class="navbar">
 			<div class="navbar-inner">
-				<div class="container " id="navbarContainer">
-					<a class="brand pull-right hidden-phone"  href="#" style="color:white;float:right">Site oficial al Guvernului Romaniei</a>
-					<a class="brand pull-right"  id="logo"href="#"   style="color:white;float:right"><img src="img/stema.png"></a>
+				<div class="container">
+					<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<div class="nav-collapse collapse" style="height: 0px;">
+						<ul class="nav">
+							<li class="pull-left"><a href="acasa" style="color:white"  ><i class="icon-home"></i></a></li>
+							<li class="pull-left"><a href="inst" style="color:white"  >Afisarea pe instituii</a></li>
+							<li class="pull-left"><a href="fct" style="color:white"  >Afisarea functionala</a></li>
+							<li class="pull-left" ><a href="resurse" style="color:white"  >Resurse</a></li>
+							<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px;display:<?php echo resurse('resurse'); ?>">Mergi cu un nivel mai sus</button></li>
+							<li class="pull-right"> <a style="color:white" id="currentPosition"></a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
 				</div>
 			</div>
 		</div>
-		<div class="hero-unit" id="baraVerde" >
-			<div class="container">
-			<h3 style="color:white;margin-top:0%">BUGET.GOV.RO</h3>
-			
-		</div>
-		</div>
-		<div class="container mainDiv" >
-			<div id="loader" style="position:absolute;right:25px;top:90px;display:<?php echo resurse('resurse'); ?>" ><img src="img/loader.gif" width="50"></div>
-			<ul class="nav nav-tabs" style="background-color:#e7e7e7">
-				<li class="pull-right"> <a id="currentPosition"></a></li>
-				<li class="pull-left <?php echo actv('acasa'); ?>"><a href="acasa"><i class="icon-home"></i></a></li>
-				<li class="pull-left <?php echo actv('inst'); ?>"><a href="inst">Afisarea pe instituii</a></li>
-				<li class="pull-left <?php echo actv('fct'); ?>"><a href="fct">Afisarea functionala</a></li>
-				<li class="pull-left <?php echo actv('resurse'); ?>" ><a href="resurse">Resurse</a></li>
-				<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px;display:<?php echo resurse('resurse'); ?>">Mergi cu un nivel mai sus</button></li>
-
-			</ul>
-
-			<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
-				include(PATH_ROOT.'pages/not_found.php');
-			}
-			?>
-		</div>
-	</body>
-	</html>
+		<div id="loader" style="position:absolute;right:25px;top:90px;display:<?php echo resurse('resurse'); ?>" ><img src="img/loader.gif" width="50"></div>
+		<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
+			include(PATH_ROOT.'pages/not_found.php');
+		}
+		?>
+	</div>
+</body>
+</html>

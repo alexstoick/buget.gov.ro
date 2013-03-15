@@ -77,6 +77,45 @@ border-bottom:1px solid #ddd;
 		
 }
 .mainDiv{
-	margin-top:132px;
+	margin-top:90px;
 
+}
+.baraSus
+{
+	height:40px;
+	background-color: #012950;
+}
+.navbar-inner a{
+	color:white;
+}
+.navbar-inner
+{
+	border:0px;
+	color:white;
+	border-radius: 0px;
+	background-color: #346699;
+	 background-image: -moz-linear-gradient(top, #346699, #346699);
+  background-image: -ms-linear-gradient(top, #346699, #346699);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#346699), to(#346699));
+  background-image: -webkit-linear-gradient(top, #346699, #346699);
+  background-image: -o-linear-gradient(top, #346699, #346699);
+  background-image: linear-gradient(top, #346699, #346699);
+  background-repeat: repeat-x;
+
+}
+.navbar
+{
+	background-color: #346699
+	 background-image: -moz-linear-gradient(top, #346699, #346699);
+  background-image: -ms-linear-gradient(top, #346699, #346699);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#346699), to(#346699));
+  background-image: -webkit-linear-gradient(top, #346699, #346699);
+  background-image: -o-linear-gradient(top, #346699, #346699);
+  background-image: linear-gradient(top, #346699, #346699);
+  background-repeat: repeat-x;
+
+}
+.menuItem
+{
+	color:white;
 }
