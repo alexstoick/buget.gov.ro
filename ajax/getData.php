@@ -36,7 +36,7 @@ $data = json_decode($json);
 
 foreach($data->d as $entry){
 	$intrare = array();
-	
+
 	foreach($propNames as $pn){
 		$apiPn = strtolower($pn);
 		$intrare[$pn] = (string)$entry->$apiPn;
@@ -48,7 +48,7 @@ foreach($data->d as $entry){
 				// total institutie
 				(
 					(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
-					(empty($_GET['copii']) && $intrare['IdParinte'] == '0') 
+					(empty($_GET['copii']) && $intrare['IdParinte'] == '0')
 				) ||
 				// copii insitutie
 				(
@@ -67,7 +67,7 @@ foreach($data->d as $entry){
 			)
 		)
 	){
-		$res['results'][] = $intrare;	
+		$res['results'][] = $intrare;
 	}else{
 		if(
 			!empty($_GET['sectiune']) &&

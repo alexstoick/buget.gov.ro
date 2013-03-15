@@ -34,17 +34,18 @@ function fillLevel(level,id)
         $("#chartdiv").addClass("small");
     }
     //FILLING AND CALLING DATA
+    var i ;
     if(level===0)
     {
         chartData=[];
         $("#currentPosition").text("Te aflii la: "+title[level]);
         $("#goBack").hide();
         left=levelMembers[level].length;
-        for(var i=0;i<levelMembers[level].length;i++)
+        for( i=0; i < levelMembers[level].length; ++i )
             getData(levelMembers[level][i],0,1,level,i);
     }
     //MODYIFING
-    if(level!=0)
+    if(level!==0)
     {
         $("#currentPosition").text("Te aflii la: "+nameClickedPreviously[beforeLevel[level]]);
         $("#goBack").show();
@@ -53,15 +54,15 @@ function fillLevel(level,id)
     {
         chartData=[];
         left=levelMembers[level].length;
-        for( var i=0;i<levelMembers[level].length;i++)
-            getData(levelMembers[level][i],0,2,level,i);
+        for( i=0; i < levelMembers[level].length ; ++i )
+            getData ( levelMembers[level][i] , 0, 2, level, i );
     }
     if(level==2)
     {
         chartData=[];
         $("#chartdiv").addClass("big");
         left=levelMembers[level].length;
-        for(var i=0;i<levelMembers[level].length;i++)
+        for( i=0; i < levelMembers[level].length; ++ i )
             getData(levelMembers[level][i],0,2,level,i);
     }
     if(level==3)
@@ -80,7 +81,7 @@ function fillLevel(level,id)
 function fillLevelWithoutNames(level,array,itemNumber){
     var sum=0;
     for(var i=0;i<array.length;i++)
-        sum+=parseInt(array[i].Suma);
+        sum+=parseInt(array[i].Suma,10);
         chartData.push({
         nume: levelNames[level][itemNumber],
         idForThis: itemNumber,
@@ -94,7 +95,7 @@ function fillLevelWithNames(level,array,itemNumber,type){
     object=array;
     for(var i=0;i<array.length;i++)
     {
-        var value=parseInt(array[i].Suma);
+        var value=parseInt(array[i].Suma,10);
         var nume;
         if(type==1)
             nume=array[i].NumeInstitutie;
@@ -111,14 +112,12 @@ function fillLevelWithNames(level,array,itemNumber,type){
 }
 function compare(a,b)
 {
-    if(parseInt(a.value)<parseInt(b.value))
-    {
+    if ( parseInt(a.value,10) < parseInt(b.value,10) )
         return 1;
-    }
-    if(parseInt(a.value)>parseInt(b.value))
-    {
+
+    if ( parseInt(a.value,10) > parseInt(b.value,10) )
         return -1;
-    }
+
     return 0;
 }
 function updateData(withAnimation)
@@ -129,7 +128,8 @@ function updateData(withAnimation)
     chart.validateData();
     $("[cursor='pointer']").hide();
     $("tbody").empty();
-    for(var i=0;i<chartData.length;i++)
+
+    for(var i=0; i < chartData.length; ++i )
     {
         $("tbody").append("<tr><th></th><th></th><th></th></tr>");
         var currentTr=$('tbody tr:nth-child('+(i+1)+')');

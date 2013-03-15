@@ -1,9 +1,9 @@
 var chart;
 var legend;
 var graph1;
-var chartData=new Array();
+var chartData= [];
 AmCharts.ready(function() {
-	  chart = new AmCharts.AmSerialChart();
+	chart = new AmCharts.AmSerialChart();
 	chart.dataProvider = chartData;
 	chart.categoryField = "nume";
 	chart.startDuration = 1;

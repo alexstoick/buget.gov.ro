@@ -32,11 +32,11 @@ function goBack()
 }
 function compare(a,b)
 {
-    if(parseInt(a.value)<parseInt(b.value))
+    if(parseInt(a.value,10) < parseInt(b.value,10) )
     {
         return 1;
     }
-    if(parseInt(a.value)>parseInt(b.value))
+    if(parseInt(a.value,10)>parseInt(b.value,10))
     {
         return -1;
     }

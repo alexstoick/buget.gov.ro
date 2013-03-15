@@ -1,6 +1,6 @@
 var chart;
 var legend;
-var chartData=new Array();
+var chartData=[] ;
 AmCharts.ready(function() {
 	chart = new AmCharts.AmSerialChart();
 	chart.dataProvider = chartData;
