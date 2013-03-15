@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row-fluid">
 	<div class="span3">
 		<ul class="nav nav-tabs nav-stacked">
 			<li class="active">

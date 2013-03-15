@@ -48,7 +48,7 @@ function resurse($str){
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 
 </head>
-<body>
+<body style="background-color:#f0efef">
 	<div class="baraSus">
 		<div class="container " id="navbarContainer">
 			<a class="brand pull-right hidden-phone"  href="#" style="color:white;float:right;font-size:1em"><h5>Site oficial al Guvernului Romaniei</a>>
@@ -62,7 +62,7 @@ function resurse($str){
 
 		</div>
 	</div>
-	<div class="container mainDiv" >
+	<div class="container mainDiv" style="background-color:white">
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="container">
@@ -77,18 +77,33 @@ function resurse($str){
 							<li class="pull-left"><a href="inst" style="color:white"  >Afisarea pe instituii</a></li>
 							<li class="pull-left"><a href="fct" style="color:white"  >Afisarea functionala</a></li>
 							<li class="pull-left" ><a href="resurse" style="color:white"  >Resurse</a></li>
-							<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px;display:<?php echo resurse('resurse'); ?>">Mergi cu un nivel mai sus</button></li>
 							<li class="pull-right"> <a style="color:white" id="currentPosition"></a></li>
+							<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px;display:<?php echo resurse('resurse'); ?>">Mergi cu un nivel mai sus</button></li>
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:<?php echo resurse('resurse'); ?>" ><img src="img/loader.gif" width="50"></div>
-		<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
-			include(PATH_ROOT.'pages/not_found.php');
-		}
-		?>
+		<div style="padding:10px">
+			<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
+				include(PATH_ROOT.'pages/not_found.php');
+			}
+			?>
+		</div>
+	</div>
+	<div class="container" style="margin-top:30px">
+		<div class="row-fluid">
+			<div class="span2"><img src="img/logoguv.png"></div>
+			<div class="span7">
+				<h5>Cancelaria Primului-Ministru</h5>
+				<h5>Departamentul pentru Servicii Online si Design</h5>
+			</div>
+			<div class="span3">
+				<img src="img/logohack.png">
+				<h5>Proiect realizat la prima editie a Hackathonului organizat de catre Guvernul Romaniei</h5>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
