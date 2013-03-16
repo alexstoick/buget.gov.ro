@@ -72,7 +72,7 @@ function resurse($str){
 					</a>
 					<div class="nav-collapse collapse" style="height: 0px;">
 						<ul class="nav">
-							<li class="pull-left"><a href="acasa" style="color:white"  ><i class="icon-home"></i></a></li>
+							<li class="pull-left"><a href="acasa" style="color:white"  ><i class="icon-home icon-white"></i></a></li>
 							<li class="pull-left"><a href="inst" style="color:white"  >Afisarea pe instituii</a></li>
 							<li class="pull-left"><a href="fct" style="color:white"  >Afisarea functionala</a></li>
 							<li class="pull-left" ><a href="resurse" style="color:white"  >Resurse</a></li>
