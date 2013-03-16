@@ -8,6 +8,8 @@
 	{{ HTML::style('css/bootstrap.min.css') }}
 	{{ HTML::style('css/bootstrap-responsive.min.css') }}
 	{{ HTML::style('css/style.css') }}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	{{ HTML::script('js/bootstrap.min.js')}}
 </head>
 <body>
 	<div class="baraSus">
@@ -75,8 +77,7 @@
 			</div>
 		</div>
 	</div>	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>
 
