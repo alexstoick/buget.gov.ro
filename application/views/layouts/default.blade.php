@@ -37,16 +37,16 @@
 					<div class="nav-collapse collapse" style="height: 0px;">
 						<ul class="nav pull-left">
 							<li class="pull-left"><a href="{{ URL::to('home') }}"><i class="icon-home icon-white"></i></a></li>
-							<li class="pull-left"><a href="{{ URL::to('institutii') }}">Afișarea pe instituii</a></li>
-							<li class="pull-left"><a href="{{ URL::to('functional') }}">Afișarea functionala</a></li>
-							<li class="pull-left" ><a href="{{ URL::to('home/resurse') }}" >Resurse</a></li>
+							<li class="pull-left"><a href="{{ URL::to('institutii') }}">AFIŞAREA PE INSTITUŢII</a></li>
+							<li class="pull-left"><a href="{{ URL::to('functional') }}">AFIŞAREA FUNCŢIONALĂ</a></li>
+							<li class="pull-left" ><a href="{{ URL::to('home/resurse') }}" >RESURSE</a></li>
 							
 						</ul>
 						<ul class="nav pull-right">
-							<li class="pull-right"><a href="{{ URL::to('despre') }}">Despre</a></li>
-							<li class="pull-right"><a href="{{ URL::to('help') }}">Help</a></li>
+							<li class="pull-right"><a href="{{ URL::to('despre') }}">DESPRE</a></li>
+							<li class="pull-right"><a href="{{ URL::to('help') }}">HELP</a></li>
 
-							<li class="pull-right"><a href="{{ URL::to('contact') }}">Contact</a></li>
+							<li class="pull-right"><a href="{{ URL::to('contact') }}">CONTACT</a></li>
 						</ul>
 					</div>
 				</div>
