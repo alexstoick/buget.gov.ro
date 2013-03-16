@@ -21,13 +21,7 @@ tbody{
 	padding:0px;
 	margin:0px;
 }
-#logo
-{
 
-	height: 20px;
-	width: 100px;
-	padding-right:0px;
-}
 img{
 	pading:0px;
 }
@@ -99,15 +93,15 @@ div.loading-visible{
 }
 .mainDiv
 {
-	margin-top:-206px;
-	min-height: 200px
+	margin-top:-211px;
+	min-height: 211px;
 	-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
 	background:white;
 }
 .baraSus
 {
-	height:40px;
+	height:27px;
 	background-color: #012950;
 }
 .navbar-inner a{
@@ -189,6 +183,7 @@ div.loading-visible{
 }
 .navbar{
 	margin-bottom:0px;
+	height:45px;
 }
 .baraSus h5
 {
@@ -206,3 +201,8 @@ div.loading-visible{
 .separator{
 	margin-top:8px;
 }
+.baraSus h5
+{
+	font-size:1em;
+	margin-top:5px;
+} 
