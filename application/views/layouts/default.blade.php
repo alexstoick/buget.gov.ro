@@ -67,8 +67,8 @@
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:none;width:25px;" >{{ HTML::image("img/loader.gif") }}</div>
 		<div id="content">
-		@yield('content')
-	</div>
+			@yield('content')
+		</div>
 	</div>
 	<div class="container" style="margin-top:30px" id="footer">
 		<div class="row-fluid">

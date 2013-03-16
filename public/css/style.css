@@ -107,7 +107,17 @@ div.loading-visible{
 }
 #content
 {
-	padding:10px;
+
+}
+.navbar li a:after
+{
+	border-right:1px #679cc2 solid;
+	content:"";
+	margin-left:30px;
+}
+.navbar li:last-child a:after
+{
+	display:none;
 }
 .baraSus
 {
