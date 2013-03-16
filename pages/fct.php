@@ -1,3 +1,11 @@
+<div class="chartMenu row-fluid">
+	<div class="span6" style="text-align:center">
+		<p style="margin-top:7px" id="currentPosition" style="">Hello World</p>
+	</div>
+	<div class="span6" style="text-align:center">
+		<button id="goBack" class="btn" onclick="goBack()" >Mergi cu un nivel mai sus</button>
+	</div>
+</div>
 <div id="chartdiv" style="width:100%; height: 700px;"></div>
 <table class="table table-bordered table-striped tabel-buget">
 	<thead>

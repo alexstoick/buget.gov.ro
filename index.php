@@ -76,20 +76,17 @@ function resurse($str){
 							<li class="pull-left"><a href="inst" style="color:white"  >Afisarea pe instituii</a></li>
 							<li class="pull-left"><a href="fct" style="color:white"  >Afisarea functionala</a></li>
 							<li class="pull-left" ><a href="resurse" style="color:white"  >Resurse</a></li>
-							<li class="pull-right"> <a style="color:white" id="currentPosition"></a></li>
-							<li><button id="goBack" class="btn" onclick="goBack()" style="margin-top:4px;display:<?php echo resurse('resurse'); ?>">Mergi cu un nivel mai sus</button></li>
+							
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:<?php echo resurse('resurse'); ?>" ><img src="img/loader.gif" width="50"></div>
-		<div style="padding:10px">
-			<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
-				include(PATH_ROOT.'pages/not_found.php');
-			}
-			?>
-		</div>
+		<?php if(!@include(PATH_ROOT.'pages/'.$g_page.'.php')){
+			include(PATH_ROOT.'pages/not_found.php');
+		}
+		?>
 	</div>
 	<div class="container" style="margin-top:30px" id="footer">
 		<div class="row-fluid">
