@@ -1,6 +1,10 @@
 body{
 	background:#f0efef;
+
 	font-family:Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.container{
+	max-width: 960px;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family:'Segoe UI Light','Segoe UI','Myriad Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -78,8 +82,8 @@ div.loading-visible{
 	background-image:     -ms-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-image:      -o-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-image:         linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
-	background-color:#7daa20;
-	height:322px;
+	background-color:#679a01;
+	height:307px;
 	z-index:-100;
 	margin-bottom:0;
 	border-radius:0;	
@@ -93,15 +97,16 @@ div.loading-visible{
 }
 .mainDiv
 {
-	margin-top:-211px;
-	min-height: 211px;
-	-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+	margin-top:-218px;
+	min-height: 218px;
+	  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 	background:white;
 }
 .baraSus
 {
-	height:27px;
+	height:30px;
 	background-color: #012950;
 }
 .navbar-inner a{
@@ -131,21 +136,13 @@ div.loading-visible{
 	background-image: -o-linear-gradient(top, #346699, #346699);
 	background-image: linear-gradient(top, #346699, #346699);
 	background-repeat: repeat-x;
+	font-weight: bold;
 }
 .navbar li a
 {
 	color:white !important;
 }
-.navbar li a:after
-{
-	border-right:1px #679cc2 solid;
-	content:"";
-	margin-left:30px;
-}
-.navbar li:last-child a:after
-{
-	display:none;
-}
+
 
 @media (max-width: 979px)
 {
@@ -183,7 +180,7 @@ div.loading-visible{
 }
 .navbar{
 	margin-bottom:0px;
-	height:45px;
+	height:38px;
 }
 .baraSus h5
 {
