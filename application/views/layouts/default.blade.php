@@ -54,7 +54,7 @@
 		</div>
 		<div id="banner" class="visible-desktop">
 			<div class="row-fluid">
-				<div class="span8" style="padding:10px">
+				<div class="span8" id="bannerText">
 					<h2>Transparența in Guvernul tău</h2>
 					<p>
 						Iți punem la dispoziție Bugetul României ca să aflii unde se duc banii publici.
