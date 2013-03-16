@@ -72,7 +72,7 @@ div.loading-visible{
 	background-image:      -o-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-image:         linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-color:#7daa20;
-	height:50px;
+	height:150px;
 	z-index:-100;
 	margin-bottom:0;
 	border-radius:0;	
@@ -83,7 +83,7 @@ div.loading-visible{
 }
 .mainDiv
 {
-	margin-top:-40px;
+	margin-top:-150px;
 }
 .baraSus
 {
