@@ -1,11 +1,11 @@
 body{
 	background:#f0efef;
-
+	padding:0px;
 	font-family:Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 .container{
 	max-width: 960px;
-}
+	}
 h1,h2,h3,h4,h5,h6{
 	font-family:'Segoe UI Light','Segoe UI','Myriad Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
 	font-weight:normal;
@@ -103,6 +103,11 @@ div.loading-visible{
 	margin-top:-218px;
 	min-height: 218px;
 	background:white;
+
+}
+#content
+{
+	padding:10px;
 }
 .baraSus
 {
