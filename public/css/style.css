@@ -1,0 +1,140 @@
+body{
+	background:#f0efef;
+}
+tbody{
+	font-size:12px;
+	font-weight: normal;
+}
+#navbarContainer .navbar-inner .navbar{
+	background-color: #001e55;
+	background-image: none;
+	background-repeat: no-repeat;
+	filter: none;
+}
+.brand
+{
+	padding:0px;
+	margin:0px;
+}
+#logo
+{
+
+	height: 20px;
+	width: 100px;
+	padding-right:0px;
+}
+img{
+	pading:0px;
+}
+#currentPosition{
+	color:black;
+}
+/*this is what we want the div to look like
+when it is not showing*/
+div.loading-invisible{
+	/*make invisible*/
+	display:none;
+}
+
+/*this is what we want the div to look like
+when it IS showing*/
+div.loading-visible{
+	/*make visible*/
+	display:block;
+
+	/*position it 200px down the screen*/
+	position:absolute;
+	top:200px;
+	left:0;
+	width:100%;
+	text-align:center;
+
+	/*in supporting browsers, make it
+	a little transparent*/
+	background:#fff;
+	filter: alpha(opacity=75); /* internet explorer */
+	-khtml-opacity: 0.75;      /* khtml, old safari */
+	-moz-opacity: 0.75;       /* mozilla, netscape */
+	opacity: 0.75;           /* fx, safari, opera */
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+}
+.big{
+	height:1000px;
+}
+.small{
+	height:600px;
+}
+#baraVerde{
+	background-image: -webkit-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:    -moz-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:     -ms-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:      -o-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-image:         linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+	background-color:#7daa20;
+	height:50px;
+	z-index:-100;
+	margin-bottom:0;
+	border-radius:0;	
+	-moz-border-radius:0;	
+	-webkit-border-radius:0;	
+	padding-top:40px;
+	padding-bottom:50px;
+}
+.mainDiv
+{
+	margin-top:-40px;
+}
+.baraSus
+{
+	height:40px;
+	background-color: #012950;
+}
+.navbar-inner a{
+	color:white;
+}
+.navbar-inner
+{
+	border:0px;
+	color:white;
+	border-radius: 0px;
+	background-color: #346699;
+	background-image: -moz-linear-gradient(top, #346699, #346699);
+	background-image: -ms-linear-gradient(top, #346699, #346699);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#346699), to(#346699));
+	background-image: -webkit-linear-gradient(top, #346699, #346699);
+	background-image: -o-linear-gradient(top, #346699, #346699);
+	background-image: linear-gradient(top, #346699, #346699);
+	background-repeat: repeat-x;
+}
+.navbar
+{
+	background-color: #346699
+	background-image: -moz-linear-gradient(top, #346699, #346699);
+	background-image: -ms-linear-gradient(top, #346699, #346699);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#346699), to(#346699));
+	background-image: -webkit-linear-gradient(top, #346699, #346699);
+	background-image: -o-linear-gradient(top, #346699, #346699);
+	background-image: linear-gradient(top, #346699, #346699);
+	background-repeat: repeat-x;
+}
+.navbar li a
+{
+	color:white !important;
+}
+.menuItem
+{
+	color:white;
+}
+
+#footer {
+	color:#959595;
+	padding:20px 0 25px 0;
+}
+#footer p.logohack {
+	text-align:center;
+}
+#footer p a {
+	color:#679a01;
+	line-height:1.25;
+}
