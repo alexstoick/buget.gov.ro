@@ -134,11 +134,11 @@ function updateData ( withAnimation )
 
     for(var i=0; i < chartData.length; ++i )
     {
-        $("tbody").append("<tr><th></th><th></th><th></th></tr>");
+        $("tbody").append("<tr><td></td><td></td><td></td></tr>");
         var currentTr=$('tbody tr:nth-child('+(i+1)+')');
-        currentTr.find('th:nth-child(1)').text(i+1);
-        currentTr.find('th:nth-child(2)').text(chartData[i].nume);
-        currentTr.find('th:nth-child(3)').text(chartData[i].value+' lei');
+        currentTr.find('td:nth-child(1)').text(i+1);
+        currentTr.find('td:nth-child(2)').text(chartData[i].nume);
+        currentTr.find('td:nth-child(3)').text(chartData[i].value+' lei');
     }
     if(currentlyInLevel===0 || currentlyInLevel ==1 )
     {

@@ -1,5 +1,5 @@
 <div id="chartdiv" style="width:100%; height: 700px;"></div>
-<table class="table table-bordered">
+<table class="table table-bordered table-striped tabel-buget">
 	<thead>
 		<tr>
 			<th>#</th>

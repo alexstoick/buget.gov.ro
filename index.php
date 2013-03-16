@@ -56,10 +56,9 @@ function resurse($str){
 		</div>
 	</div>
 
-	<div class="hero-unit" id="baraVerde" >
+	<div class="hero-unit" id="baraVerde">
 		<div class="container">
-			<h3 style="color:white;margin-top:0%">BUGET.GOV.RO</h3>
-
+			<h3 style="color:white;margin-top:0">BUGET.GOV.RO</h3>
 		</div>
 	</div>
 	<div class="container mainDiv" style="background-color:white">
@@ -92,16 +91,13 @@ function resurse($str){
 			?>
 		</div>
 	</div>
-	<div class="container" style="margin-top:30px">
+	<div class="container" style="margin-top:30px" id="footer">
 		<div class="row-fluid">
-			<div class="span2"><img src="img/logoguv.png"></div>
-			<div class="span7">
-				<h5>Cancelaria Primului-Ministru</h5>
-				<h5>Departamentul pentru Servicii Online si Design</h5>
-			</div>
-			<div class="span3">
-				<img src="img/logohack.png">
-				<h5>Proiect realizat la prima editie a Hackathonului organizat de catre Guvernul Romaniei</h5>
+			<div class="span8"><img src="img/logoSiTextGuv.png"></div>
+			<div class="span4">
+				<p class="logohack"><img src="img/logohack.png"></p>
+				<p>Proiect realizat la prima editie a Hackathonului organizat de catre Guvernul Romaniei</p>
+				<p><a href="echipa">Vezi echipa de proiect &rarr;</a></p>
 			</div>
 		</div>
 	</div>

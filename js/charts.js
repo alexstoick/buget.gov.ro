@@ -46,11 +46,17 @@ AmCharts.ready(function() {
 	// WRITE
 	chart.write("chartdiv");
 	chart.addListener("clickGraphItem",handleClick);
+	chart.addListener("rollOverGraphItem",handleRollOver);
 
 	function handleClick(item)
 	{
 		nameClickedPreviously[currentlyInLevel]=chartData[item.index].nume;
 		fillLevel(chartData[item.index].nextLevel,chartData[item.index].idForThis);
+	}
+	function handleRollOver(item)
+	{
+		item.balloonText = 'your mom';
+		chart.updateData();
 	}
 	fillLevel(0);
 });
