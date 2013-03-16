@@ -12,8 +12,9 @@
 <body>
 	<div class="baraSus">
 		<div class="container" id="navbarContainer">
-			<a class="brand pull-right hidden-phone" href="#" style="color:white;float:right;font-size:1em"><h5>Site oficial al Guvernului Romaniei</a>
 			<a class="brand pull-right" id="logo" href="#" style="color:white;float:right">{{ HTML::image('img/stema.png') }}</a>
+			<h5 class="pull-right">Site oficial al Guvernului Romaniei</h5>
+			
 		</div>
 	</div>
 
@@ -32,11 +33,17 @@
 						<span class="icon-bar"></span>
 					</a>
 					<div class="nav-collapse collapse" style="height: 0px;">
-						<ul class="nav">
+						<ul class="nav pull-left">
 							<li class="pull-left"><a href="{{ URL::to('home') }}"><i class="icon-home icon-white"></i></a></li>
-							<li class="pull-left"><a href="{{ URL::to('institutii') }}">Afisarea pe instituii</a></li>
-							<li class="pull-left"><a href="{{ URL::to('functional') }}">Afisarea functionala</a></li>
+							<li class="pull-left"><a href="{{ URL::to('institutii') }}">Afișarea pe instituii</a></li>
+							<li class="pull-left"><a href="{{ URL::to('functional') }}">Afișarea functionala</a></li>
 							<li class="pull-left" ><a href="{{ URL::to('home/resurse') }}" >Resurse</a></li>
+							
+						</ul>
+						<ul class="nav pull-right">
+							<li class="pull-right"><a href="{{ URL::to('despre') }}">Despre</a></li>
+							<li class="pull-right"><a href="{{ URL::to('help') }}">Help</a></li>
+							<li class="pull-right"><a href="{{ URL::to('contact') }}">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -45,12 +52,12 @@
 		<div id="banner" class="visible-desktop">
 			<div class="row-fluid">
 				<div class="span8" style="padding:10px">
-					<h2>Transparenta in Guvernul tau</h2>
+					<h2>Transparența in Guvernul tău</h2>
 					<p>
-						Iti punem la dispozitie Bugetul Romaniei ca sa aflii unde se duc banii publici.
-						Ai acces la acesta in format grafic, sau in format .pdf/.xls/.xml
+						Iți punem la dispoziție Bugetul României ca să aflii unde se duc banii publici.
+						Ai acces la acesta in format grafic, sau în format .pdf/.xls/.xml
 					</p>
-					<a href="#" style="color:#679a01;">Afla mai multe</a>
+					<a href="#" style="color:#679a01;">Află mai multe &rarr;</a>
 				</div>
 				<div class="span4" style="text-align:right">{{HTML::image('img/govlogo.jpg', '')}}</div>
 			</div>
@@ -63,7 +70,7 @@
 			<div class="span8">{{ HTML::image("img/logoSiTextGuv.png") }}</div>
 			<div class="span4">
 				<p class="logohack">{{ HTML::image("img/logohack.png") }}</p>
-				<p>Proiect realizat la prima editie a Hackathonului organizat de catre Guvernul Romaniei</p>
+				<p>Proiect realizat la prima ediție a Hackathonului organizat de către Guvernul României</p>
 				<p><a href="{{ URL::to('echipa') }}">Vezi echipa de proiect &rarr;</a></p>
 			</div>
 		</div>

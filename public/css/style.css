@@ -148,3 +148,10 @@ div.loading-visible{
 .navbar{
 	margin-bottom:0px;
 }
+.baraSus h5
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-right:15px;
+	color:white;
+	font-weight: normal;
+}
