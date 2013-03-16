@@ -22,7 +22,7 @@
 			<h3 style="color:white;margin-top:0">BUGET.GOV.RO</h3>
 		</div>
 	</div>
-	<div class="container mainDiv" style="background-color:white">
+	<div class="container mainDiv " style="background-color:white">
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="container">
@@ -40,6 +40,19 @@
 						</ul>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div id="banner" class="visible-desktop">
+			<div class="row-fluid">
+				<div class="span8" style="padding:10px">
+					<h2>Transparenta in Guvernul tau</h2>
+					<p>
+						Iti punem la dispozitie Bugetul Romaniei ca sa aflii unde se duc banii publici.
+						Ai acces la acesta in format grafic, sau in format .pdf/.xls/.xml
+					</p>
+					<a href="#" style="color:#679a01;">Afla mai multe</a>
+				</div>
+				<div class="span4" style="text-align:right">{{HTML::image('img/govlogo.jpg', '')}}</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:none;width:25px;" >{{ HTML::image("img/loader.gif") }}</div>

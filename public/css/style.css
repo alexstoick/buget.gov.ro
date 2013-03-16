@@ -138,3 +138,13 @@ div.loading-visible{
 	color:#679a01;
 	line-height:1.25;
 }
+#banner
+{
+	background-color: #012950;
+	margin-top:0px;
+	margin-bottom: 10px;
+	color:white;
+}
+.navbar{
+	margin-bottom:0px;
+}
