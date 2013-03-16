@@ -84,6 +84,7 @@ div.loading-visible{
 .mainDiv
 {
 	margin-top:-150px;
+	min-height: 200px
 }
 .baraSus
 {
