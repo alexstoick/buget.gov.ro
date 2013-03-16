@@ -131,18 +131,11 @@ div.loading-visible{
 	background-image: -o-linear-gradient(top, #346699, #346699);
 	background-image: linear-gradient(top, #346699, #346699);
 	background-repeat: repeat-x;
+	filter:none;
 }
 .navbar
 {
-	background-color: #346699
-	background-image: -moz-linear-gradient(top, #346699, #346699);
-	background-image: -ms-linear-gradient(top, #346699, #346699);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#346699), to(#346699));
-	background-image: -webkit-linear-gradient(top, #346699, #346699);
-	background-image: -o-linear-gradient(top, #346699, #346699);
-	background-image: linear-gradient(top, #346699, #346699);
-	background-repeat: repeat-x;
-	font-weight: bold;
+	
 }
 .navbar li a
 {
@@ -192,6 +185,15 @@ div.loading-visible{
 .navbar{
 	margin-bottom:0px;
 	line-height:38px !important;
+	background-color: #346699 !important;
+	background-image: -moz-linear-gradient(top, #346699, #346699);
+	background-image: -ms-linear-gradient(top, #346699, #346699);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#346699), to(#346699));
+	background-image: -webkit-linear-gradient(top, #346699, #346699);
+	background-image: -o-linear-gradient(top, #346699, #346699);
+	background-image: linear-gradient(top, #346699, #346699);
+	background-repeat: repeat-x;
+	font-weight: bold;
 }
 .baraSus h5
 {
