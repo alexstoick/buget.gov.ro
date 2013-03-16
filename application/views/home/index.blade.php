@@ -1,25 +1,27 @@
 @layout('layouts.default')
 
 @section('content')
-<div class="row-fluid" style="padding:10px">
-	<div class="span3">
-		<ul class="nav nav-tabs nav-stacked">
-			<li class="active">
-				<a href="#">Istoria Bugetului</a>
-			</li>
-			<li>
-				<a href="#">Agenda Bugetului</a>
-			</li>
-			<li>
-				<a href="#">Cum se hotaraste bugetul</a>
-			</li>
-			<li>
-				<a href="http://gov.ro">gov.ro</a>
-			</li>
-		</ul>
+<div class="row-fluid">
+	<div class="span3 sidebar">
+		<div class="inner">
+			<ul class="nav nav-tabs nav-stacked">
+				<li class="active">
+					<a href="#">Istoria Bugetului</a>
+				</li>
+				<li>
+					<a href="#">Agenda Bugetului</a>
+				</li>
+				<li>
+					<a href="#">Cum se hotaraste bugetul</a>
+				</li>
+				<li>
+					<a href="http://gov.ro">gov.ro</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 	<div class="span9">
-		<h1 style="text-align:center">Bugetul Romaniei</h1>
+		<h1>Bugetul Romaniei</h1>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eros massa. Curabitur gravida pulvinar mollis. Mauris vitae erat vitae purus venenatis tincidunt eleifend nec mauris. Quisque malesuada blandit odio sed fermentum. Sed ultricies posuere mauris, et feugiat odio sollicitudin vitae. Etiam fringilla ligula quis nisi mattis semper. In convallis malesuada dui ut lacinia.
 		<br>
 		Etiam ultrices auctor erat, in venenatis massa adipiscing sit amet. In quis lacus urna, eu tristique eros. Donec vestibulum sodales ipsum eu pharetra. Donec nec leo eget purus interdum mollis id vel purus. Cras faucibus, quam ac iaculis feugiat, nulla sapien dictum nisi, pharetra viverra orci odio non enim. Etiam mi magna, sodales id feugiat et, elementum in diam. Donec luctus mauris sit amet tortor iaculis rutrum congue ligula lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque pellentesque sapien fermentum felis lobortis cursus. Ut scelerisque urna at sapien adipiscing nec mattis mi luctus. Nullam id tellus quis dolor ullamcorper vestibulum eget vitae nibh. Integer non odio sem.
@@ -31,19 +33,19 @@
 		Suspendisse in arcuin felis tristique dictum. Sed ut nibh mollis metus faucibus auctor aliquet sit amet nulla. Praesent aliquet orci nec nisi sodales eu imperdiet metus pretium. Nullam sit amet nisi eget risus molestie semper ac nec diam. Curabitur magna dolor, consequat a adipiscing vitae, condimentum vehicula sem. Suspendisse at odio lacus, a egestas massa. Donec ut elementum dolor. Cras ornare congue odio, a congue odio ornare nec. Aenean ligula dui, iaculis posuere sagittis non, vestibulum sed libero. Vestibulum eleifend egestas purus vel semper. Nulla urna sapien, egestas sed dictum non, fringilla vitae diam. Nulla sed orci arcu. Duis scelerisque velit aliquet velit porttitor a interdum elit condimentum. Nam vitae metus purus, at dapibus lectus. Nam nisl ligula, mattis eu euismod sit amet, rutrum eu lorem.
 		<div class="row-fluid">
 			<div class="span4">
-				<h4 style="text-align:center">Afisarea functionala</h4>
+				<h4>Afisarea functionala</h4>
 				<p>
 					Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum
 				</p>
 			</div>
 			<div class="span4">
-				<h4 style="text-align:center">Afisarea pe institutii</h4>
+				<h4>Afisarea pe institutii</h4>
 				<p>
 					Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum
 				</p>
 			</div>
 			<div class="span4">
-				<h4 style="text-align:center">Resurse</h4>
+				<h4>Resurse</h4>
 				<p>
 					Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum
 				</p>

@@ -25,7 +25,7 @@
 			<h3 id="logo">BUGET.GOV.RO</h3>
 		</div>
 	</div>
-	<div class="container mainDiv " style="background-color:white">
+	<div class="container mainDiv">
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="container">
