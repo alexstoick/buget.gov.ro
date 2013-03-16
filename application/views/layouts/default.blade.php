@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<div id="banner" class="visible-desktop">
-			<div class="row-fluid">
+			<div class="row-fluid" style="min-height:166px">
 				<div class="span8" id="bannerText">
 					<h2>Transparența in Guvernul tău</h2>
 					<p>
