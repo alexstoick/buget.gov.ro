@@ -187,6 +187,7 @@ div.loading-visible{
 .navbar{
 	margin-bottom:0px;
 	line-height:38px;
+	max-height: 38px;
 }
 .baraSus h5
 {
@@ -209,3 +210,7 @@ div.loading-visible{
 	font-size:1em;
 	margin-top:5px;
 } 
+#banner img{
+	height:180px;
+	width: 320px;
+}

@@ -62,7 +62,7 @@
 					</p>
 					<a href="#" style="color:#679a01;">Află mai multe &rarr;</a>
 				</div>
-				<div class="span4" style="text-align:right">{{HTML::image('img/govlogo.jpg', '')}}</div>
+				<div class="span4" style="text-align:right;height:">{{HTML::image('img/govlogo.jpg', '')}}</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:none;width:25px;" >{{ HTML::image("img/loader.gif") }}</div>
