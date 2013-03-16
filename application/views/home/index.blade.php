@@ -14,7 +14,7 @@
 				<a href="#">Cum se hotaraste bugetul</a>
 			</li>
 			<li>
-				<a href="#">Gov.ro</a>
+				<a href="http://gov.ro">gov.ro</a>
 			</li>
 		</ul>
 	</div>

@@ -14,7 +14,7 @@
 <body>
 	<div class="baraSus">
 		<div class="container" id="navbarContainer">
-			<a class="brand pull-right" id="logo" href="#" style="color:white;float:right">{{ HTML::image('img/stema.png') }}</a>
+			<a class="brand pull-right" id="stema" href="#">{{ HTML::image('img/stema.png') }}</a>
 			<h5 class="pull-right">Site oficial al Guvernului Romaniei</h5>
 			
 		</div>
@@ -22,7 +22,7 @@
 
 	<div class="hero-unit" id="baraVerde">
 		<div class="container">
-			<h3 style="color:white;margin-top:0">BUGET.GOV.RO</h3>
+			<h3 id="logo">BUGET.GOV.RO</h3>
 		</div>
 	</div>
 	<div class="container mainDiv " style="background-color:white">

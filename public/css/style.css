@@ -1,6 +1,10 @@
 body{
 	background:#f0efef;
-	font-family:Georgia,serif;
+	font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family:'Segoe UI Light','Segoe UI','Myriad Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-weight:normal;
 }
 tbody{
 	font-size:12px;
@@ -66,6 +70,14 @@ div.loading-visible{
 .small{
 	height:600px;
 }
+#logo{
+	text-indent:-9999px;
+	background:url('../img/logo.png');
+	width:265px;
+	height:34px;
+	margin:0;
+	margin-top:34px;
+}
 #baraVerde{
 	background-image: -webkit-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-image:    -moz-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
@@ -73,18 +85,18 @@ div.loading-visible{
 	background-image:      -o-linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-image:         linear-gradient(left, hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
 	background-color:#7daa20;
-	height:150px;
+	height:322px;
 	z-index:-100;
 	margin-bottom:0;
 	border-radius:0;	
 	-moz-border-radius:0;	
 	-webkit-border-radius:0;	
-	padding-top:40px;
-	padding-bottom:50px;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
 }
 .mainDiv
 {
-	margin-top:-150px;
+	margin-top:-206px;
 	min-height: 200px
 }
 .baraSus
@@ -166,10 +178,13 @@ div.loading-visible{
 }
 .baraSus h5
 {
-	font-family: Georgia, "Times New Roman", Times, serif;
 	margin-right:15px;
 	color:white;
 	font-weight: normal;
+}
+.baraSus a
+{
+	color:white !important;
 }
 .divider-vertical{
 	background-color: black
