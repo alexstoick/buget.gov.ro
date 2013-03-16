@@ -141,18 +141,9 @@ div.loading-visible{
 {
 	color:white !important;
 }
-
-@media (min-width: 900px) {  
+@media(min-width: 900px) {  
 	.navbar{
-		height: 38px;
-	}
-}
- 
-@media (max-width: 979px)
-{
-	.navbar li a:after
-	{
-		display:none;
+		height: 38px !important;
 	}
 }
 .menuItem
