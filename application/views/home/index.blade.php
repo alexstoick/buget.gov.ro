@@ -1,7 +1,7 @@
 @layout('layouts.default')
 
 @section('content')
-<div class="row-fluid">
+<div class="row-fluid" style="padding:10px">
 	<div class="span3">
 		<ul class="nav nav-tabs nav-stacked">
 			<li class="active">
