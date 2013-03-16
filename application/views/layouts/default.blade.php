@@ -9,14 +9,15 @@
 	{{ HTML::style('css/bootstrap-responsive.min.css') }}
 	{{ HTML::style('css/style.css') }}
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	{{ HTML::script('js/bootstrap.min.js')}}
+	{{ HTML::script('js/bootstrap.min.js') }}
+	{{ HTML::script('js/respond.min.js') }}
 </head>
 <body>
 	<div class="baraSus">
 		<div class="container" id="navbarContainer">
 			<a class="brand pull-right" id="stema" href="#">{{ HTML::image('img/stema.png') }}</a>
 			<h5 class="pull-right">Site oficial al Guvernului Romaniei</h5>
-			
+
 		</div>
 	</div>
 
@@ -40,7 +41,7 @@
 							<li class="pull-left"><a href="{{ URL::to('institutii') }}">AFIŞAREA PE INSTITUŢII</a></li>
 							<li class="pull-left"><a href="{{ URL::to('functional') }}">AFIŞAREA FUNCŢIONALĂ</a></li>
 							<li class="pull-left" ><a href="{{ URL::to('home/resurse') }}" >RESURSE</a></li>
-							
+
 						</ul>
 						<ul class="nav pull-right">
 							<li class="pull-right"><a href="{{ URL::to('despre') }}">DESPRE</a></li>
@@ -79,8 +80,8 @@
 				<p><a href="{{ URL::to('echipa') }}">Vezi echipa de proiect &rarr;</a></p>
 			</div>
 		</div>
-	</div>	
-	
+	</div>
+
 </body>
 </html>
 
