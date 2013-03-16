@@ -109,16 +109,7 @@ div.loading-visible{
 {
 
 }
-.navbar li a:after
-{
-	border-right:1px #679cc2 solid;
-	content:"";
-	margin-left:30px;
-}
-.navbar li:last-child a:after
-{
-	display:none;
-}
+
 .baraSus
 {
 	height:30px;
@@ -195,7 +186,7 @@ div.loading-visible{
 }
 .navbar{
 	margin-bottom:0px;
-	height:38px;
+	line-height:38px;
 }
 .baraSus h5
 {
