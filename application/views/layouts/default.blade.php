@@ -75,9 +75,9 @@
 	</div>
 	<div class="container" style="margin-top:30px" id="footer">
 		<div class="row-fluid">
-			<div class="span8">{{ HTML::image("img/logoSiTextGuv.png") }}</div>
+			<div class="span8"><a href="http://online.gov.ro/">{{ HTML::image("img/logoSiTextGuv.png") }}</a></div>
 			<div class="span4">
-				<p class="logohack">{{ HTML::image("img/logohack.png") }}</p>
+				<p class="logohack"><a href="http://hackrogov.cloudapp.net">{{ HTML::image("img/logohack.png") }}</a></p>
 				<p>Proiect realizat la prima ediție a Hackathonului organizat de către Guvernul României</p>
 				<p><a href="{{ URL::to('echipa') }}">Vezi echipa de proiect &rarr;</a></p>
 			</div>
