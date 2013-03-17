@@ -6,6 +6,16 @@ class String
 	end
 end
 
+def syntax(message = nil)
+	puts message unless message.nil?
+	puts "Syntax: ./parser.rb [csv|xml|ids]"
+	exit
+end
+
+if ARGV[0].nil?
+	syntax("Please specify the first argument.")
+end
+
 dir = 'sources/anexa/'
 idMinistere = []
 idAltele = []
@@ -48,11 +58,14 @@ Dir.glob(dir + '*.csv') do |file|
 					end
 				end
 				idSectiuni.push(section) unless idSectiuni.include?(section)
+			elsif ARGV[0] == "csv"
+				puts '"'+idInstitutie+ '","' + idParinte.to_s + '","' + section + '","' +
+						an.to_s + '","' + numeInstitutie + '","' + denumireIndicator + '","' +
+						suma + '"'
+			elsif ARGV[0] == "xml"
+				puts "new id " + idInstitutie if idParinte == 0
 			end
 
-			puts '"'+idInstitutie+ '","' + idParinte.to_s + '","' + section + '","' +
-					an.to_s + '","' + numeInstitutie + '","' + denumireIndicator + '","' +
-					suma + '"'
 			idParinte = idInstitutie
 		end
 
