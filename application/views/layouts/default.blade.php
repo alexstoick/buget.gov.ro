@@ -15,7 +15,7 @@
 <body>
 	<div class="baraSus">
 		<div class="container" id="navbarContainer">
-			<a class="brand pull-right" id="stema" href="#">{{ HTML::image('img/stema.png') }}</a>
+			<a class="brand pull-right" id="stema" href="http://www.gov.ro">{{ HTML::image('img/stema.png') }}</a>
 			<h5 class="pull-right" id="titluStema">SITE OFICIAL AL GUVERNULUI ROMÂNIEI</h5>
 
 		</div>

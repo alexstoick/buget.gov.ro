@@ -3,7 +3,7 @@
 @section('content')
 <div class="row-fluid visible-desktop visible-tablet">
 	<div class="span9">
-		<h1>Bugetul Romaniei</h1>
+		<h1>Lorem Ipsum</h1>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eros massa. Curabitur gravida pulvinar mollis. Mauris vitae erat vitae purus venenatis tincidunt eleifend nec mauris. Quisque malesuada blandit odio sed fermentum. Sed ultricies posuere mauris, et feugiat odio sollicitudin vitae. Etiam fringilla ligula quis nisi mattis semper. In convallis malesuada dui ut lacinia.
 		<br>
 		Etiam ultrices auctor erat, in venenatis massa adipiscing sit amet. In quis lacus urna, eu tristique eros. Donec vestibulum sodales ipsum eu pharetra. Donec nec leo eget purus interdum mollis id vel purus. Cras faucibus, quam ac iaculis feugiat, nulla sapien dictum nisi, pharetra viverra orci odio non enim. Etiam mi magna, sodales id feugiat et, elementum in diam. Donec luctus mauris sit amet tortor iaculis rutrum congue ligula lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque pellentesque sapien fermentum felis lobortis cursus. Ut scelerisque urna at sapien adipiscing nec mattis mi luctus. Nullam id tellus quis dolor ullamcorper vestibulum eget vitae nibh. Integer non odio sem.

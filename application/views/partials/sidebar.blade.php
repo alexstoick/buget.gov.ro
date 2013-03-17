@@ -2,16 +2,19 @@
 	<div class="inner">
 		<ul class="nav nav-tabs nav-stacked">
 			<li class="active">
-				<a href="#">Istoria Bugetului</a>
+				<a href="#">Lorem Ipsum</a>
 			</li>
 			<li>
-				<a href="#">Agenda Bugetului</a>
+				<a href="#">Lorem Ipsum</a>
 			</li>
 			<li>
-				<a href="#">Cum se hotaraste bugetul</a>
+				<a href="#">Lorem Ipsum</a>
 			</li>
 			<li>
-				<a href="http://gov.ro">gov.ro</a>
+				<a href="#">Lorem Ipsum</a>
+			</li>
+			<li>
+				<a href="#">Lorem Ipsum</a>
 			</li>
 		</ul>
 	</div>
