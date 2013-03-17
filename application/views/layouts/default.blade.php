@@ -57,15 +57,14 @@
 		</div>
 		<div id="banner" class="visible-desktop">
 			<div class="row-fluid" style="min-height:180px">
-				<div class="span7" id="bannerText" >
-					<h1>Transparenţă în Guvernul României</h1>
-					<p>
-						Iți punem la dispoziție Bugetul României ca să aflii unde se duc banii publici.
-						Ai acces la acesta in format grafic, sau în format .pdf/.xls/.xml
+				<div class="span8" id="bannerText" >
+					<h1>Bugetul național pe înțelesul tuturor</h1>
+					<p id="bannerTextP">
+						„Transparența și deschiderea spre partenerii sociali şi consultarea societăţii civile reprezintă constante ale actului de guvernare. Ele vor asigura o bază solidă de susţinere a iniţiativelor şi măsurilor Guvernului, întărind angajamentul acestuia pentru respectarea principiilor bunei guvernări: transparenţă, responsabilitate, participare cetăţenească”.
 					</p>
-					<a href="#" style="color:#679a01;">Află mai multe &rarr;</a>
+					<a href="http://www.guv.ro/programul-de-guvernare-2012__l1a117011.html" style="color:#679a01;font" class="pull-right">Citește întreg Programul de Guvernare 2013-2016 »</a>
 				</div>
-				<div class="span5 pull-right" style="">{{HTML::image('img/govlogo.jpg', '')}}</div>
+				<div class="span4 pull-right" style="">{{HTML::image('img/govlogo.jpg', '')}}</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:none;width:25px;" >{{ HTML::image("img/loader.gif") }}</div>

@@ -32,7 +32,7 @@ class Despre_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		return View::make('despre.index');
+		return View::make('despre.index')->nest('sidebar','partials.sidebar');;
 	}
 
 }

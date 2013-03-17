@@ -32,7 +32,7 @@ class Contact_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		return View::make('contact.index');
+		return View::make('contact.index')->nest('sidebar','partials.sidebar');
 	}
 
 }

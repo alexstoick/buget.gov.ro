@@ -130,7 +130,7 @@ div.loading-visible{
 .baraSus
 {
 	height:30px;
-	background-color: #012950;
+	background-color: #001D55;
 }
 .navbar-inner a{
 	color:white;
@@ -243,4 +243,13 @@ div.loading-visible{
 	height:180px;
 	width: 320px;
 	float:right;
+}
+#bannerTextP{
+	font-size:13px;
+	line-height: 19px;
+}
+#bannerText a{
+	font-weight: bold;
+	font-size:13px;
+	font-weight: 13px;
 }
