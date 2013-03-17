@@ -201,6 +201,10 @@ div.loading-visible{
 {
 	padding:10px 10px 10px 20px;
 }
+#banner #bannerText h1
+{
+	font-size:33px;
+}
 .navbar{
 	margin-bottom:0px;
 	line-height:38px !important;

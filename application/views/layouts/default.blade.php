@@ -58,7 +58,7 @@
 		<div id="banner" class="visible-desktop">
 			<div class="row-fluid" style="min-height:180px">
 				<div class="span7" id="bannerText" >
-					<h1 style="font-size:35px">Transparenţă în Guvernul României</h1>
+					<h1>Transparenţă în Guvernul României</h1>
 					<p>
 						Iți punem la dispoziție Bugetul României ca să aflii unde se duc banii publici.
 						Ai acces la acesta in format grafic, sau în format .pdf/.xls/.xml
