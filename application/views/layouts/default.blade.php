@@ -35,11 +35,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<ul class="container nav" style="margin:0px">
-						<li><a href="{{ URL::to('home') }}"><i class="icon-home icon-white"></i></a></li>
-					</ul>
+				<!-- 	<ul class="container nav" style="margin:0px">
+						
+					</ul> -->
 					<div class="nav-collapse collapse" style="height: 0px;">
 						<ul class="nav pull-left">
+							<li><a href="{{ URL::to('home') }}"><i class="icon-home icon-white"></i></a></li>
 							<li class="pull-left"><a href="{{ URL::to('institutii') }}">AFIŞAREA PE INSTITUŢII</a></li>
 							<li class="pull-left"><a href="{{ URL::to('functional') }}">AFIŞAREA FUNCŢIONALĂ</a></li>
 							<li class="pull-left" ><a href="{{ URL::to('home/resurse') }}" >RESURSE</a></li>
