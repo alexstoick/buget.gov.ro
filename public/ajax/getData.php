@@ -27,15 +27,24 @@ if(
 	die();
 }
 
-$rws = new RestServiceClient('http://rogovdata.cloudapp.net:8080/v1/RoGovOpenData/buget');
+$rws = new RestServiceClient('http://rogovdata.cloudapp.net:8080/v1/RoGovOpenData/Buget/');
 $filter = '';
-if(empty($_GET['sectiune']) && !empty($_GET['institutie'])){
-	$filter = '(idparinte eq 0) and (';
+
+if(!empty($_GET['institutie'])){
+	if(empty($_GET['copii'])){
+		$filter = '(idparinte eq 0) and ';
+	}else{
+		$filter = '(idparinte ne 0) and ';
+	}
+	$filter.='(';
 	foreach(explode(",",$_GET['institutie']) as $inst){
 		$filter.='(idinstitutie eq '.$inst.') or ';
 	}
 	$filter=substr($filter,0,strlen($filter)-4);
 	$filter.=')';
+}
+if(!empty($_GET['sectiune'])){
+	$filter = 'sectiune eq '.$_GET['sectiune'];
 }
 
 $filter='&$filter='.rawurlencode($filter);
@@ -45,6 +54,7 @@ $rws->format = 'json';
 $rws->excuteRequest();
 $json = $rws->getResponse();
 $data = json_decode($json);
+$suma = 0;
 
 foreach($data->d as $entry){
 	$intrare = array();
@@ -54,34 +64,21 @@ foreach($data->d as $entry){
 		$intrare[$pn] = (string)$entry->$apiPn;
 	}
 
-	if( empty($_GET['suma']) && (
-			!empty($_GET['sectiune']) &&
-			(
-				// sectiune
-				(
-					$intrare['Sectiune'] == $_GET['sectiune'] &&
-					substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
-				)
-			)
-		)
+	if(!empty($_GET['suma'])){
+		$suma += $intrare['Suma'];
+		$numeSectiune = $intrare['DenumireIndicator'];
+	}
+	
+	if(
+		empty($_GET['copii']) ||
+		(!empty($_GET['copii']) && substr($intrare['DenumireIndicator'],0,6)=='TITLUL') && substr($intrare['Sectiune'],0,4)=='5001'
 	){
 		$res['results'][] = $intrare;
-	}else{
-		if(
-			!empty($_GET['sectiune']) &&
-			$intrare['Sectiune'] == $_GET['sectiune'] &&
-			substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'
-		){
-			$sumaSectiune += $intrare['Suma'];
-			if(substr($intrare['DenumireIndicator'],0,6) != 'TITLUL'){
-				$numeSectiune = $intrare['DenumireIndicator'];
-			}
-		}
 	}
 }
 
 if(!empty($_GET['suma'])){
-	$res['suma'] = $sumaSectiune;
+	$res['suma'] = $suma;
 	$res['numeSectiune'] = $numeSectiune;
 }
 
