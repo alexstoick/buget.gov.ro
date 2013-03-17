@@ -1,12 +1,12 @@
 body{
 	background:#f0efef;
 	padding:0px;
-	font-family:Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;
 }
 .container{
 	max-width: 960px;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3{
 	/*font-family:'Segoe UI Light','Segoe UI','Myriad Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
 	font-weight:normal;*/
 	font-family:"wf_SegoeUILight", "Segoe UI Light", Arial, Helvetica, sans-serif;
@@ -15,6 +15,9 @@ h1,h2,h3,h4,h5,h6{
 tbody{
 	font-size:12px;
 	font-weight: normal;
+}
+#stema{
+	margin-top:3px;
 }
 #navbarContainer .navbar-inner .navbar{
 	background-color: #001e55;
@@ -30,6 +33,7 @@ tbody{
 
 img{
 	pading:0px;
+
 }
 #currentPosition{
 	color:black;
@@ -111,7 +115,12 @@ div.loading-visible{
 {
 
 }
-
+#titluStema{
+	font-size:10px;
+	padding-top:8px;
+	margin:0;
+	padding-right:0.5em;
+}
 .baraSus
 {
 	height:30px;
@@ -138,6 +147,7 @@ div.loading-visible{
 .navbar li
 {
 	margin:0px;	
+	font-size:13px !important;
 }
 .navbar-inner{
 	padding:0px;
