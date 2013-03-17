@@ -71,7 +71,7 @@ foreach($data->d as $entry){
 	
 	if(
 		empty($_GET['copii']) ||
-		(!empty($_GET['copii']) && substr($intrare['DenumireIndicator'],0,6)=='TITLUL') && substr($intrare['Sectiune'],0,4)=='5001'
+		(!empty($_GET['copii']) && substr($intrare['DenumireIndicator'],0,6)=='Titlul') && substr($intrare['Sectiune'],0,4)=='5001'
 	){
 		$res['results'][] = $intrare;
 	}
