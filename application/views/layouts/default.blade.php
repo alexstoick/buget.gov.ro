@@ -55,15 +55,15 @@
 		</div>
 		<div id="banner" class="visible-desktop">
 			<div class="row-fluid" style="min-height:180px">
-				<div class="span8" id="bannerText">
-					<h2>Transparența in Guvernul tău</h2>
+				<div class="span7" id="bannerText">
+					<h1 style="font-size:35px">Transparenţă în Guvernul României</h1>
 					<p>
 						Iți punem la dispoziție Bugetul României ca să aflii unde se duc banii publici.
 						Ai acces la acesta in format grafic, sau în format .pdf/.xls/.xml
 					</p>
 					<a href="#" style="color:#679a01;">Află mai multe &rarr;</a>
 				</div>
-				<div class="span4" style="text-align:right;height:">{{HTML::image('img/govlogo.jpg', '')}}</div>
+				<div class="span7" style="text-align:right;height:">{{HTML::image('img/govlogo.jpg', '')}}</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:none;width:25px;" >{{ HTML::image("img/loader.gif") }}</div>

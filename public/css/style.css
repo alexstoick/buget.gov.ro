@@ -7,8 +7,10 @@ body{
 	max-width: 960px;
 }
 h1,h2,h3,h4,h5,h6{
-	font-family:'Segoe UI Light','Segoe UI','Myriad Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
-	font-weight:normal;
+	/*font-family:'Segoe UI Light','Segoe UI','Myriad Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-weight:normal;*/
+	font-family:"wf_SegoeUILight", "Segoe UI Light", Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
 tbody{
 	font-size:12px;
@@ -133,16 +135,24 @@ div.loading-visible{
 	background-repeat: repeat-x;
 	filter:none;
 }
-.navbar
+.navbar li
 {
-	
+	margin:0px;	
+}
+.navbar-inner{
+	padding:0px;
 }
 .navbar li a
 {
 	color:white !important;
+	padding:9px 15px 9px;
+	margin:0px;
+}
+.navbar li:hover{
+	background-color: #497eb4;
 }
 @media(min-width: 900px) {  
-	.navbar{
+	.navbar , .navbar-inner , .nav , .nav li{
 		height: 38px !important;
 	}
 }
