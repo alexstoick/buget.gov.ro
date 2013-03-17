@@ -19,6 +19,7 @@ function goBack()
 //Level 2 : Alte institutii
 //Level 3 : Titluri din interiorul fiecarui minister
 //Level 4 : Titluri din interiorul fiecarei institutii
+
 function fillLevel ( level, id )
 {
     if ( level == -1 )
@@ -123,6 +124,17 @@ function compare ( a, b )
 
     return 0;
 }
+function addCommas(str) {
+    var amount = new String(str);
+    amount = amount.split("").reverse();
+
+    var output = "";
+    for ( var i = 0; i <= amount.length-1; i++ ){
+        output = amount[i] + output;
+        if ((i+1) % 3 == 0 && (amount.length-1) !== i)output = ',' + output;
+    }
+    return output;
+}
 function updateData ( withAnimation )
 {
     $("#loader").hide();
@@ -138,7 +150,7 @@ function updateData ( withAnimation )
         var currentTr=$('tbody tr:nth-child('+(i+1)+')');
         currentTr.find('td:nth-child(1)').text(i+1);
         currentTr.find('td:nth-child(2)').text(chartData[i].nume);
-        currentTr.find('td:nth-child(3)').text(chartData[i].value+' lei');
+        currentTr.find('td:nth-child(3)').text(addCommas(chartData[i].value)+'mil. lei');
     }
     if(currentlyInLevel===0 || currentlyInLevel ==1 )
     {

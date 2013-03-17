@@ -42,6 +42,17 @@ function compare(a,b)
     }
     return 0;
 }
+function addCommas(str) {
+    var amount = new String(str);
+    amount = amount.split("").reverse();
+
+    var output = "";
+    for ( var i = 0; i <= amount.length-1; i++ ){
+        output = amount[i] + output;
+        if ((i+1) % 3 == 0 && (amount.length-1) !== i)output = ',' + output;
+    }
+    return output;
+}
 function updateData()
 {
     $("#loader").hide();
@@ -56,7 +67,7 @@ function updateData()
         var currentTr=$('tbody tr:nth-child('+(i+1)+')');
         currentTr.find('th:nth-child(1)').text(i+1);
         currentTr.find('th:nth-child(2)').text(chartData[i].nume);
-        currentTr.find('th:nth-child(3)').text(chartData[i].value+' lei mil');
+        currentTr.find('th:nth-child(3)').text(addCommas(chartData[i].value)+' lei mil');
     }
 }
 function getData(tipRequest,id)
