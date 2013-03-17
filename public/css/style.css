@@ -92,7 +92,7 @@ div.loading-visible{
 	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
 	box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 	background-color:#679a01;
-	height:307px;
+	height:301px;
 	z-index:-100;
 	margin-bottom:0;
 	border-radius:0;	
@@ -154,6 +154,7 @@ div.loading-visible{
 {
 	margin:0px;	
 	font-size:13px !important;
+
 }
 .navbar-inner{
 	padding:0px;
@@ -161,8 +162,8 @@ div.loading-visible{
 .navbar li a
 {
 	color:white !important;
-	padding:9px 15px 9px;
-	margin:0px;
+	padding: 9px 15px 9px;
+	margin:0px;	
 }
 .navbar li:hover{
 	background-color: #497eb4;
@@ -211,7 +212,7 @@ div.loading-visible{
 	background-image: -o-linear-gradient(top, #346699, #346699);
 	background-image: linear-gradient(top, #346699, #346699);
 	background-repeat: repeat-x;
-	font-weight: bold;
+	font-weight: normal;
 }
 .baraSus h5
 {
@@ -237,4 +238,5 @@ div.loading-visible{
 #banner img{
 	height:180px;
 	width: 320px;
+	float:right;
 }

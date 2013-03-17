@@ -35,7 +35,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<ul class="container nav">
+					<ul class="container nav" style="margin:0px">
 						<li><a href="{{ URL::to('home') }}"><i class="icon-home icon-white"></i></a></li>
 					</ul>
 					<div class="nav-collapse collapse" style="height: 0px;">
@@ -57,7 +57,7 @@
 		</div>
 		<div id="banner" class="visible-desktop">
 			<div class="row-fluid" style="min-height:180px">
-				<div class="span7" id="bannerText">
+				<div class="span7" id="bannerText" >
 					<h1 style="font-size:35px">Transparenţă în Guvernul României</h1>
 					<p>
 						Iți punem la dispoziție Bugetul României ca să aflii unde se duc banii publici.
@@ -65,7 +65,7 @@
 					</p>
 					<a href="#" style="color:#679a01;">Află mai multe &rarr;</a>
 				</div>
-				<div class="span5" style="text-align:right;height:">{{HTML::image('img/govlogo.jpg', '')}}</div>
+				<div class="span5 pull-right" style="">{{HTML::image('img/govlogo.jpg', '')}}</div>
 			</div>
 		</div>
 		<div id="loader" style="position:absolute;right:25px;top:90px;display:none;width:25px;" >{{ HTML::image("img/loader.gif") }}</div>
