@@ -101,6 +101,11 @@ div.loading-visible{
 	padding-top:0 !important;
 	padding-bottom:0 !important;
 }
+@media (max-width: 767px) {
+	#baraVerde .container {
+		margin-left:-45px;
+	}
+}
 .sidebar > .inner{
 	padding:10px;
 }
