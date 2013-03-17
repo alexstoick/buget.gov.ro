@@ -29,9 +29,20 @@ if(
 
 $rws = new RestServiceClient('http://rogovdata.cloudapp.net:8080/v1/RoGovOpenData/buget');
 $filter = '';
-if(empty($_GET['sectiune'])){
-	$filter = '&$filter=idparinte%20eq%200';
+if(empty($_GET['sectiune']) && !empty($_GET['institutie'])){
+	$filter = '(idparinte eq 0) and (';
+	foreach(explode(",",$_GET['institutie']) as $inst){
+		$filter.='(idinstitutie eq '.$inst.') or ';
+	}
+	$filter=substr($filter,0,strlen($filter)-4);
+	$filter.=')';
 }
+
+$filter='&$filter='.rawurlencode($filter);
+
+echo $filter;
+die();
+
 $rws->query = '$select='.$propNamesURL.$filter;
 $rws->format = 'json';
 $rws->excuteRequest();
@@ -47,20 +58,6 @@ foreach($data->d as $entry){
 	}
 
 	if( empty($_GET['suma']) && (
-			!empty($_GET['institutie']) &&
-			(
-				// total institutie
-				(
-					(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
-					(empty($_GET['copii']) && $intrare['IdParinte'] == '0')
-				) ||
-				// copii institutie
-				(
-					(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
-					(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
-				)
-			)
-			||
 			!empty($_GET['sectiune']) &&
 			(
 				// sectiune
