@@ -28,7 +28,11 @@ if(
 }
 
 $rws = new RestServiceClient('http://rogovdata.cloudapp.net:8080/v1/RoGovOpenData/buget');
-$rws->query = '$select='.$propNamesURL;
+$filter = '';
+if(empty($_GET['sectiune'])){
+	$filter = '&$filter=idparinte%20eq%200';
+}
+$rws->query = '$select='.$propNamesURL.$filter;
 $rws->format = 'json';
 $rws->excuteRequest();
 $json = $rws->getResponse();
@@ -50,7 +54,7 @@ foreach($data->d as $entry){
 					(in_array($intrare['IdInstitutie'], explode(",",$_GET['institutie']))) &&
 					(empty($_GET['copii']) && $intrare['IdParinte'] == '0')
 				) ||
-				// copii insitutie
+				// copii institutie
 				(
 					(in_array($intrare['IdParinte'], explode(",",$_GET['institutie']))) &&
 					(!empty($_GET['copii']) && $intrare['IdParinte'] != '0' && $intrare['Sectiune'] == '5001')
