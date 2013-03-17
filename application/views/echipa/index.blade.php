@@ -9,5 +9,6 @@
 			<li>Harbuz Vlad</li>
 		</ul>		
 	</div>
+	
 </div>
 @endsection
