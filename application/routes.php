@@ -36,10 +36,7 @@ Route::get('/', function()
 {
 	return View::make('home.index');
 });
-Route::get('home/(:any)', function($title)
-{
-    return View::make('home.page')->with('page', $title);
-});
+
 
 /*
 |--------------------------------------------------------------------------

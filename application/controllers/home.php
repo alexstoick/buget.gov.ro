@@ -32,7 +32,10 @@ class Home_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		return View::make('home.index');
+		return View::make('home.index')->nest('sidebar','partials.sidebar');
 	}
-
+	public function action_resurse()
+	{
+		return View::make('home.resurse');
+	}
 }
