@@ -38,8 +38,6 @@ AmCharts.ready(function() {
 	graph.lineAlpha = 0;
 	graph.fillColors = ["#001e55", "#0093e0"];
 	graph.fillAlphas = 1;
-	graph.labelPosition = "left" ;
-	graph.labelText = "[[value]]" ;
 	chart.addGraph(graph);
 
 	// LEGEND
