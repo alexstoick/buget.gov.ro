@@ -36,6 +36,6 @@ class Home_Controller extends Base_Controller {
 	}
 	public function action_resurse()
 	{
-		return View::make('home.resurse');
+		return View::make('home.resurse')->nest('sidebar','partials.sidebar');;
 	}
 }

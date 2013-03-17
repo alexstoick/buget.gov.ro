@@ -32,7 +32,7 @@ class Echipa_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		return View::make('echipa.index');
+		return View::make('echipa.index')->nest('sidebar','partials.sidebar');
 	}
 
 }
