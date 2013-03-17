@@ -40,9 +40,6 @@ if(empty($_GET['sectiune']) && !empty($_GET['institutie'])){
 
 $filter='&$filter='.rawurlencode($filter);
 
-echo $filter;
-die();
-
 $rws->query = '$select='.$propNamesURL.$filter;
 $rws->format = 'json';
 $rws->excuteRequest();
