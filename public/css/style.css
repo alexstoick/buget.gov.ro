@@ -109,11 +109,12 @@ div.loading-visible{
 	margin-top:-218px;
 	min-height: 218px;
 	background:white;
-
+	
 }
 #content
 {
 	padding:10px;
+	padding-bottom: 50px;
 }
 #titluStema{
 	font-size:10px;
@@ -173,7 +174,7 @@ div.loading-visible{
 
 #footer {
 	color:#959595;
-	padding:20px 0 25px 0;
+	padding:25px;
 }
 #footer p.logohack {
 	text-align:center;
@@ -186,6 +187,7 @@ div.loading-visible{
 {
 	background-color: #012950;
 	margin-top:0px;
+	max-height:180px;
 	margin-bottom: 10px;
 	color:white;
 }

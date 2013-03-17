@@ -38,7 +38,7 @@
    		<?php echo render('partials.sidebar'); ?>
 	</div>
 </div>
-<div class="row-fluid visble-mobile">
+<div class="row-fluid hidden-tablet hidden-desktop">
 	<div class="sidebar">
    		<?php echo render('partials.sidebar'); ?>
 	</div>
